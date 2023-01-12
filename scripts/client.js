@@ -107,3 +107,75 @@ function points(games) {
 }
 console.log('Points for Team X are:', points(["1:0", "2:0", "3:0", "4:0", "2:1", "3:1", "4:1", "3:2", "4:2", "4:3"]));
 console.log('Points for Team X are:', points(["1:1", "2:2", "3:3", "4:4", "2:2", "3:3", "4:4", "3:3", "4:4", "4:4"]));
+
+
+console.log('1/12/23 JavaScript code challenges practice');
+
+/**
+From Codewars:
+Make a function that can take any non-negative integer as an argument.
+Return it with its digits in descending order. 
+ */
+
+function descendingDigits(number) {
+    let digitArray = number.toString().split('');
+    digitArray.sort(function (a,b) {
+        return b-a;
+    })
+    return Number(digitArray.join(''));
+}
+
+console.log('Descending digits from input number 355012 are:', descendingDigits(355012));
+console.log('Descending digits from input number 90148 are:', descendingDigits(90148));
+
+/**
+From Codewars:
+Function that accepts a string parameter, and reverses each word in the string. 
+All spaces in the string should be retained.
+*/
+
+function reverseWords(string) {
+    let stringArray = string.split(' ');
+    let reversedArray=[];
+    for(let i=0; i<stringArray.length; i+=1) {
+        let reversedWord=stringArray[i].split('').reverse().join('');
+        reversedArray.push(reversedWord);
+    }
+    let fullString=reversedArray.join(' ');
+    return fullString;
+}
+
+console.log('String with reversed words (including spaces) from \'Fuzzy wuzzy was a bear.\':', reverseWords('Fuzzy wuzzy was a bear.'));
+
+/**
+From Edabit
+Stanislav Mozolevskiy in JavaScript
+Function that takes two numbers and a mathematical operator + - / * and will perform a calculation with the given numbers.
+f the input tries to divide by 0, return: "Can't divide by 0!"
+*/
+ 
+function calculator(num1, operator, num2) {
+    let answer;
+	switch (operator) {
+		case '+':
+			answer = num1 + num2;
+            break;
+		case '-':
+			answer = num1 - num2;
+            break;
+		case '*':
+			answer = num1 * num2;
+            break;
+		case '/':
+			if (num2 === 0) {
+                return "Can't divide by 0!";
+            } else {
+                answer = num1 / num2;
+            }
+            break;
+	}
+	return answer;
+}
+
+console.log('5 divided by 0 is:', calculator(5, '/', 0));
+console.log('10 times 3.5 is:', calculator(10, '*', 3.5));
