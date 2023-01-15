@@ -119,8 +119,8 @@ Return it with its digits in descending order.
 
 function descendingDigits(number) {
     let digitArray = number.toString().split('');
-    digitArray.sort(function (a,b) {
-        return b-a;
+    digitArray.sort(function (a, b) {
+        return b - a;
     })
     return Number(digitArray.join(''));
 }
@@ -136,12 +136,12 @@ All spaces in the string should be retained.
 
 function reverseWords(string) {
     let stringArray = string.split(' ');
-    let reversedArray=[];
-    for(let i=0; i<stringArray.length; i+=1) {
-        let reversedWord=stringArray[i].split('').reverse().join('');
+    let reversedArray = [];
+    for (let i = 0; i < stringArray.length; i += 1) {
+        let reversedWord = stringArray[i].split('').reverse().join('');
         reversedArray.push(reversedWord);
     }
-    let fullString=reversedArray.join(' ');
+    let fullString = reversedArray.join(' ');
     return fullString;
 }
 
@@ -153,29 +153,89 @@ Stanislav Mozolevskiy in JavaScript
 Function that takes two numbers and a mathematical operator + - / * and will perform a calculation with the given numbers.
 f the input tries to divide by 0, return: "Can't divide by 0!"
 */
- 
+
 function calculator(num1, operator, num2) {
     let answer;
-	switch (operator) {
-		case '+':
-			answer = num1 + num2;
+    switch (operator) {
+        case '+':
+            answer = num1 + num2;
             break;
-		case '-':
-			answer = num1 - num2;
+        case '-':
+            answer = num1 - num2;
             break;
-		case '*':
-			answer = num1 * num2;
+        case '*':
+            answer = num1 * num2;
             break;
-		case '/':
-			if (num2 === 0) {
+        case '/':
+            if (num2 === 0) {
                 return "Can't divide by 0!";
             } else {
                 answer = num1 / num2;
             }
             break;
-	}
-	return answer;
+    }
+    return answer;
 }
 
 console.log('5 divided by 0 is:', calculator(5, '/', 0));
 console.log('10 times 3.5 is:', calculator(10, '*', 3.5));
+
+console.log('1/15/23 JavaScript code challenges practice');
+
+/**
+ Given a string of words, return the length of the shortest word.
+ */
+
+// using reduce 
+function findShortestLength(string) {
+    let stringArray = string.split(" ");
+    let shortestWord = stringArray.reduce((shortest, current) => {
+        return current.length < shortest.length ? current : shortest;
+    }, stringArray[0]);
+    return shortestWord.length;
+}
+
+console.log('Using the reduce method, the length of the shortest word from string \'cat dog horse cow\' is:', findShortestLength("Cat dog horse cow"));
+
+// using for loop
+function findShortestWordLength(string) {
+    let stringArray = string.split(" ");
+    let shortestWordLength = stringArray[0].length;
+    for (let i = 0; i < stringArray.length; i += 1) {
+        if (stringArray[i].length < shortestWordLength) {
+            shortestWordLength = stringArray[i].length;
+        }
+    }
+    return shortestWordLength;
+}
+
+console.log('Using a for loop, the length of the shortest word from string \'A quick brown fox\' is:', findShortestWordLength(('A quick brown fox')));
+
+
+/**
+Convert a number to a reversed array of digits.
+*/
+
+function reverseNumber(number) {
+    const numberArray = number.toString().split('').reverse().map(number => {
+        return Number(number);
+    })
+    return numberArray;
+}
+
+console.log('Converting number 313456 to a reversed array of digits is:', reverseNumber(313456));
+
+/**
+ Given a string of numbers, return the highest and lowest number as a string with a space between the numbers.
+ */
+
+function highestLowest(numbers) {
+    let numberArray = numbers.split(" ");
+    numberArray.sort((a, b) => {
+        // ascending order
+        return a - b;
+    })
+    return `${numberArray[numberArray.length - 1]} ${numberArray[0]}`;
+}
+
+console.log('The highest number and lowest number from this string of numbers \'45 0 90 122 3 -1\' is:', highestLowest("45 0 90 122 3 -1"));
