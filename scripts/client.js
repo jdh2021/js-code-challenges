@@ -239,3 +239,48 @@ function highestLowest(numbers) {
 }
 
 console.log('The highest number and lowest number from this string of numbers \'45 0 90 122 3 -1\' is:', highestLowest("45 0 90 122 3 -1"));
+
+
+console.log('1/16/23 JavaScript code challenges practice');
+
+/**
+ From Codewars:
+ Given an array of ones and zeroes, convert the equivalent binary value to an integer.
+ */
+
+function binaryToDecimal(binaryArray) {
+    let decimal = 0;
+    let x;
+    let y;
+    for (x = binaryArray.length - 1, y = 0; x >= 0, y < binaryArray.length; x -= 1, y += 1) {
+        // value at first index of array (ascending) multiplied by two to the power of ending value of array (descending)
+        decimal += (binaryArray[y] * (2 ** [x]));
+    }
+    return decimal;
+}
+
+console.log('Array of binary values [1,0,0] to number is:', binaryToDecimal([1, 0, 0]));
+console.log('Array of binary values [1,0,0] to number is:', binaryToDecimal([1, 1, 1, 1]));
+
+/**
+ Write a function that takes in an array of strings and returns true if any string occurs twice, otherwise false.
+ */
+
+function findDuplicates(stringArray) {
+    // create empty object
+    let object = {};
+    // for of to loop over array
+    for (let string of stringArray) {
+        // checks if key already exists at each iteration
+        if (object[string]) {
+            return true;
+        } else {
+            // if key doesn't exist, create a key-value pair
+            object[string] = "key value added";
+        }
+    }
+    return false;
+}
+
+console.log("Checking from array of strings [\"dog\", \"cat\", \"dog\", \"horse\"] whethere there\'s a duplicate:", findDuplicates(["dog", "cat", "dog", "horse"]));
+console.log("Checking from array of strings [\"turtle\", \"fox\", \"beaver\", \"mouse\"] whethere there\'s a duplicate:", findDuplicates(["turtle", "fox", "beaver", "mouse"]));
