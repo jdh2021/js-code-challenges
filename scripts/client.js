@@ -227,7 +227,7 @@ console.log('Converting number 313456 to a reversed array of digits is:', revers
 
 /**
  Given a string of numbers, return the highest and lowest number as a string with a space between the numbers.
- */
+*/
 
 function highestLowest(numbers) {
     let numberArray = numbers.split(" ");
@@ -244,9 +244,9 @@ console.log('The highest number and lowest number from this string of numbers \'
 console.log('1/16/23 JavaScript code challenges practice');
 
 /**
- From Codewars:
- Given an array of ones and zeroes, convert the equivalent binary value to an integer.
- */
+From Codewars:
+Given an array of ones and zeroes, convert the equivalent binary value to an integer.
+*/
 
 function binaryToDecimal(binaryArray) {
     let decimal = 0;
@@ -263,8 +263,8 @@ console.log('Array of binary values [1,0,0] to number is:', binaryToDecimal([1, 
 console.log('Array of binary values [1,0,0] to number is:', binaryToDecimal([1, 1, 1, 1]));
 
 /**
- Write a function that takes in an array of strings and returns true if any string occurs twice, otherwise false.
- */
+Write a function that takes in an array of strings and returns true if any string occurs twice, otherwise false.
+*/
 
 function findDuplicates(stringArray) {
     // create empty object
@@ -284,3 +284,43 @@ function findDuplicates(stringArray) {
 
 console.log("Checking from array of strings [\"dog\", \"cat\", \"dog\", \"horse\"] whethere there\'s a duplicate:", findDuplicates(["dog", "cat", "dog", "horse"]));
 console.log("Checking from array of strings [\"turtle\", \"fox\", \"beaver\", \"mouse\"] whethere there\'s a duplicate:", findDuplicates(["turtle", "fox", "beaver", "mouse"]));
+
+console.log('1/19/23 JavaScript code challenges practice');
+
+/**
+Create a function that takes a list of integers and strings and returns a new list with the integers filtered out.
+*/
+
+function getStrings(array) {
+    let stringArray = [];
+    for(let i=0; i<array.length; i+=1) {
+        if (typeof array[i] === 'string') {
+            stringArray.push(array[i]);
+        }
+    }
+    return stringArray;
+}
+
+function filterStrings(array) {
+    return array.filter(item => typeof item === 'string');
+}
+
+console.log('For loop - Filtering out strings from an array of strings and integers [5, "hello", -3, "welcome", 2, 4] returns:', getStrings([5, "hello", -3, "welcome", 2, 4]));
+console.log('Filter method - Filtering out strings from an array of strings and integers [5, "hello", -3, "welcome", 2, 4] returns:', filterStrings([5, "hello", -3, "welcome", 2, 4]));
+
+/**
+From Codewars:
+Write a function to square every digit of a number and concatenate them. Return an integer.
+*/
+
+function squareNumber(input) {
+    // convert number to string, split into array, map by element, square element
+    const output = input.toString().split("").map( element => {
+        return element ** 2;
+    } )
+    // join elements into string and return number
+    return Number(output.join(""));
+}
+
+console.log('Squaring each digit in number 45123 and concatenating the digits to produce a new number returns:', squareNumber(45123));
+console.log('Squaring each digit in number 127 and concatenating the digits to produce a new number returns:', squareNumber(127));
