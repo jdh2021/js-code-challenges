@@ -324,3 +324,56 @@ function squareNumber(input) {
 
 console.log('Squaring each digit in number 45123 and concatenating the digits to produce a new number returns:', squareNumber(45123));
 console.log('Squaring each digit in number 127 and concatenating the digits to produce a new number returns:', squareNumber(127));
+
+console.log('1/19/23 JavaScript code challenges practice');
+
+/**
+From Codewars:
+Get the Middle Character
+Return the middle character of a word. If the word's length is odd, return the middle character.
+If the word's length is even, return the two middle characters.
+ */
+
+function returnMiddle(word) {
+    let finalString="";
+    if (word.length % 2 === 1 ) {
+        finalString=word[(word.length/2)-.5];
+    } else if (word.length % 2 === 0) {
+        let firstCharacter=word[(word.length/2)-1];
+        let secondCharacter=word[word.length/2];
+        finalString = firstCharacter.concat("", secondCharacter);
+    } else if (word.length === 0) {
+        finalString=word[0];
+    }
+    return finalString;
+}
+
+console.log('The middle character from a word with a odd length like apple is:', returnMiddle('apple'));
+console.log('The middle two characters from a word with an even length like meow is:', returnMiddle('meow'));
+
+/**
+From Edabit - Matt
+Create a function that takes an object and returns the keys and values 
+as separate arrays. Return the keys sorted alphabetically, 
+and their corresponding values in the same order.
+*/
+
+function keyValue(object) {
+    let keyArray = [];
+    let valueArray = [];
+    let finalArray =[];
+    // for in loop to loop over properites of object
+    for (let key in object) {
+        keyArray.push(key);
+        valueArray.push(object[key]);
+    }
+    keyArray.sort();
+    console.log(keyArray);
+    console.log(valueArray);
+    finalArray[0] = keyArray;
+    finalArray[1] = valueArray;
+    return finalArray;
+}
+
+console.log('The object is { dog: 10, blueberry: 1, cat: 3} Returning the object keys in an array sorted alphabetically and the object values in an unchanged array returns:',
+keyValue({dog: 10, blueberry: 1, cat: 3}));
