@@ -325,7 +325,7 @@ function squareNumber(input) {
 console.log('Squaring each digit in number 45123 and concatenating the digits to produce a new number returns:', squareNumber(45123));
 console.log('Squaring each digit in number 127 and concatenating the digits to produce a new number returns:', squareNumber(127));
 
-console.log('1/19/23 JavaScript code challenges practice');
+console.log('1/20/23 JavaScript code challenges practice');
 
 /**
 From Codewars:
@@ -377,3 +377,38 @@ function keyValue(object) {
 
 console.log('The object is { dog: 10, blueberry: 1, cat: 3} Returning the object keys in an array sorted alphabetically and the object values in an unchanged array returns:',
 keyValue({dog: 10, blueberry: 1, cat: 3}));
+
+console.log('1/21/23 JavaScript code challenges practice');
+
+/**
+From Codewars:
+Find the stray number. You are given an odd-length array of integers, 
+in which all of them are the same, except for one single number.
+Complete the method which accepts such an array, and returns that single different number. 
+*/
+
+function findStrayNumber(array) {
+    return array.find(number => 
+        array.indexOf(number) === array.lastIndexOf(number));
+}
+
+console.log('Finding the odd number out in array [7, 3, 7, 7, 7] returns:', findStrayNumber([7, 3, 7, 7, 7]));
+console.log('Finding the odd number out in array [1, 4, 4, 4, 4, 4] returns:', findStrayNumber([1, 4, 4, 4, 4, 4]));
+
+/**
+ A function to determine if a word is a palindrome
+ */
+
+ function checkPalindrome(word) {
+    let palindrome = true;
+    for (let i=0, j=word.length-1; i<word.length, j>=0; i+=1, j-=1) {
+        if (word[i] !== word[j]) {
+            palindrome = false;
+        }
+    }
+    return palindrome;
+ }
+
+ console.log('Checking if \'kayak\' is a palindrome:', checkPalindrome('kayak'));
+ console.log('Checking if \'piano\' is a palindrome:', checkPalindrome('piano'));
+ 
