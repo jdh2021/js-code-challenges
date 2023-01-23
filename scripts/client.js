@@ -412,3 +412,37 @@ console.log('Finding the odd number out in array [1, 4, 4, 4, 4, 4] returns:', f
  console.log('Checking if \'kayak\' is a palindrome:', checkPalindrome('kayak'));
  console.log('Checking if \'piano\' is a palindrome:', checkPalindrome('piano'));
  
+
+console.log('1/23/23 JavaScript code challenges practice');
+
+/** 
+A function that takes an array of strings as an argument 
+and returns them in order from longest to shortest.
+*/
+
+function longToShort(stringArray) {
+    const sortedArray = stringArray.sort((a,b) => { 
+        return b.length - a.length;
+    })
+    return sortedArray;
+}
+
+console.log('An array of strings [\'cat\', \'buffalo\', \'sheep\'] sorted longest to shortest length returns:', longToShort(['cat', 'buffalo', 'sheep']));
+
+/**
+A function that counts the divisors of a positive integer. 
+*/
+
+function countDivisors(number) {
+    let divisorCount = 0;
+    // for loop starting at number itself and decreasing each loop
+    for (let i=number; i >0; i-=1) {
+        if (number % i === 0) {
+            divisorCount+=1;
+        }
+    }
+    return divisorCount;
+}
+
+console.log('The number of divisors for 6 is:', countDivisors(6));
+console.log('The number of divisors for 7 is:', countDivisors(7));
