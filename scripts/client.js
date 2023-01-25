@@ -446,3 +446,53 @@ function countDivisors(number) {
 
 console.log('The number of divisors for 6 is:', countDivisors(6));
 console.log('The number of divisors for 7 is:', countDivisors(7));
+
+console.log('1/25/23 JavaScript code challenges practice');
+
+
+/**
+From Codewars:
+Complete the function/method so that it returns the url with anything after the anchor (#) removed.
+*/
+
+function returnUrl(url) {
+    const urlArray = url.split("");
+    let index;
+    let spliceElements = false;
+    console.log(urlArray);
+    for(let i = 0; i<urlArray.length; i+=1) {
+        if (urlArray[i] === '#') {
+            index = urlArray.indexOf(urlArray[i]);
+            spliceElements = true;
+        }
+    }
+    if (spliceElements) {
+        urlArray.splice(index);
+        return urlArray.join("");
+    } else {
+        return urlArray.join("");
+    }
+}
+
+console.log('URL \'https://www.ibdog.io/#/home\' with \'#\' and all following characters removed is:', returnUrl("https://ibdog.io/#/home"));
+console.log('URL \'https://www.google.com\' with \'#\' and all following characters removed is:', returnUrl("https://www.google.com"));
+
+/**
+From Codewars:
+Write a function that takes a single string (word) as argument. 
+The function must return an ordered list containing the indexes of all capital letters in the string.
+*/
+
+function returnCapitalIndices(word) {
+    const wordArray = word.split("");
+    const capitalLetterArray = [];
+    for(let letter of wordArray) {
+        if (letter == letter.toUpperCase()) {
+                capitalLetterArray.push(wordArray.indexOf(letter));
+        }
+    }
+    return capitalLetterArray;
+}
+
+console.log('From word \'HeLlO\', an array with the indices of the capital letters is:', returnCapitalIndices('HeLlO'));
+console.log('From word \'mEOw\', an array with the indices of the capital letters is:', returnCapitalIndices('mEOw'));
