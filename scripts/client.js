@@ -496,3 +496,42 @@ function returnCapitalIndices(word) {
 
 console.log('From word \'HeLlO\', an array with the indices of the capital letters is:', returnCapitalIndices('HeLlO'));
 console.log('From word \'mEOw\', an array with the indices of the capital letters is:', returnCapitalIndices('mEOw'));
+
+console.log('1/29/23 JavaScript code challenges practice');
+
+/**
+From Codewars:
+Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers. 
+*/
+
+function sumTwoLowest(array) {
+    array.sort((a,b) => {
+        return a-b
+    })
+    return array[0] + array[1];
+}
+
+console.log('The sum of the two lowest positive integers from [ 5, 1000, 100, 2, 1] is:', sumTwoLowest([5, 1000, 100, 2, 1]));
+console.log('The sum of the two lowest positive integers from [ 1, 4000, 20, 1] is:', sumTwoLowest([1, 4000, 20, 1]));
+
+/**
+Create a function that takes in a number and returns it in expanded form as a string. 
+*/
+
+function expandedForm(number) {
+    let stringNumber = number.toString();
+    const expandedForm = [];
+    for (let i=stringNumber.length, x=0; i >=0, x<stringNumber.length; i-=1, x+=1) {
+        let expanded = stringNumber[x];
+        console.log(expanded);
+        let baseTen = 10 ** (i-1);
+        let expandedNumber = expanded * baseTen;
+        if (expandedNumber !== 0) {
+            expandedForm.push(expandedNumber);
+        }
+    }
+    return expandedForm.join(' + ');
+}
+
+console.log('The expanded form of 154032 as a string is:', expandedForm(154032));
+console.log('The expanded form of 91 as a string is:', expandedForm(91));
