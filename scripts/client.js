@@ -535,3 +535,34 @@ function expandedForm(number) {
 
 console.log('The expanded form of 154032 as a string is:', expandedForm(154032));
 console.log('The expanded form of 91 as a string is:', expandedForm(91));
+
+console.log('3/19/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives become positives.
+ */
+
+function invert(array) {
+    const invertedArray = [];
+    for(let i=0; i< array.length; i+=1) {
+       array[i] *= -1;
+       invertedArray.push(array[i]);
+    }
+    return invertedArray;
+}
+
+console.log('The inverted array of [0, 1, -3, 5, -6] is', invert([0, 1, -3, 5, -6]));
+console.log('The inverted array of [-10, -2, 25] is', invert([10, -2, 25]));
+
+/**
+ * From Codewars:
+ * Create a function that will break up camel casing, using a space between words.
+ */
+
+function splitCamel(string) {
+    return string.replace(/([A-Z])/g, " $1").trim();
+}
+
+console.log('Splitting camel case string \'helloWorld\' returns', splitCamel('helloWorld'));
+console.log('A string that isn\'t camel case like \'helloworld\' returns', splitCamel('helloworld'));
