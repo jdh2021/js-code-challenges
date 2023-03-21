@@ -566,3 +566,32 @@ function splitCamel(string) {
 
 console.log('Splitting camel case string \'helloWorld\' returns', splitCamel('helloWorld'));
 console.log('A string that isn\'t camel case like \'helloworld\' returns', splitCamel('helloworld'));
+
+console.log('3/20/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Write a function that takes in a positive parameter num and returns its multiplicative persistence, the number of times you must multiply the digits in num until you reach a single digit.
+ */
+
+function timesToSingleDigit(number) {
+    // if number is 1 digit, 0 times to multiply to reach a single digit
+    if (number.toString().length === 1) {
+        return 0;
+    } else {
+        let count = 0;
+        // while the digits in the number are greater than one
+        while (number.toString().length > 1) {
+            // split the digits into an array and multiply accumulator by current value, and set as new number
+            number = number.toString().split("").reduce((accumulator, currentValue) =>
+                accumulator * currentValue);
+            count+=1;
+        }
+        return count;
+    }
+}
+
+console.log('The number of times it takes to multiply the digits in number 535 to until you reach a single digit is', 
+timesToSingleDigit(535));
+console.log('The number of times it takes to multiply the digits in number 45 to until you reach a single digit is', 
+timesToSingleDigit(45));
