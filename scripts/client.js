@@ -595,3 +595,47 @@ console.log('The number of times it takes to multiply the digits in number 535 t
 timesToSingleDigit(535));
 console.log('The number of times it takes to multiply the digits in number 45 to until you reach a single digit is', 
 timesToSingleDigit(45));
+
+
+console.log('3/25/23 JavaScript code challenges practice');
+/**
+ * From Codewars:
+ * Write a function that takes a list of strings and returns each line prepended by the correct number.
+Numbering starts at 1, and the format is n: string. 
+ */
+
+function orderStrings(stringArray) {
+    let numberedArray = [];
+    for (let i=0; i<stringArray.length; i+=1) {
+        console.log(i);
+        numberedArray.push(`${i+1}: ${stringArray[i]}`);
+    }
+    return numberedArray;
+}
+
+console.log('The array of strings ["apple", "bear", "cat"] returned in the format number: string is', orderStrings(["apple", "bear", "cat"]));
+
+/**
+ * From Codewars:
+ * Build a pyramid-shaped tower, as an array/list of strings, given a positive integer number of floors. A tower block is represented with "*" character.
+ */
+
+function buildPyramid(number) {
+    const pyramid = [];
+    let spaces = 0;
+    while (number > 0) {
+        let firstSpace = (" ").repeat(spaces);
+        let asterisk = ("*").repeat(number+(number-1));
+        let secondSpace = (" ").repeat(spaces);
+        let floorString = firstSpace + asterisk + secondSpace;
+        pyramid.push(floorString);
+        number--;
+        spaces++;
+    }
+    pyramid.reverse();
+    return pyramid;
+}
+
+console.log('Building a pyramid of 5 floors with \'*\' returns', buildPyramid(5));
+console.log('Building a pyramid of 3 floors with \'*\' returns', buildPyramid(3));
+
