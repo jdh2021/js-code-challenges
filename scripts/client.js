@@ -639,3 +639,27 @@ function buildPyramid(number) {
 console.log('Building a pyramid of 5 floors with \'*\' returns', buildPyramid(5));
 console.log('Building a pyramid of 3 floors with \'*\' returns', buildPyramid(3));
 
+console.log('3/26/23 JavaScript code challenges practice');
+
+//
+/**
+ * From Codewars:
+ * Create a function that accepts 3 integer values a, b, c. The function should return true if a triangle can be built with the sides of given length and false in any other case.
+ */
+
+ function isTriangle(numA, numB, numC) {
+    // length of any two sides must be greater than third side
+    if(numA !== undefined && numB !==undefined && numC !== undefined) {
+        if(numA + numB > numC) {
+            if (numA + numC > numB) {
+                if (numB + numC > numA) {
+                    // only if all combinations are true, return true
+                    return true;
+                }
+            }
+        }
+    } return false;
+ }
+
+ console.log('Given side lengths of 5, 6, and 11, can a triangle be built?', isTriangle(5, 6, 11));
+ console.log('Given side lengths of 5, 4, and 3, can a triangle be built?', isTriangle(5, 4, 3));
