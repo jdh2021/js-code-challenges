@@ -641,7 +641,6 @@ console.log('Building a pyramid of 3 floors with \'*\' returns', buildPyramid(3)
 
 console.log('3/26/23 JavaScript code challenges practice');
 
-//
 /**
  * From Codewars:
  * Create a function that accepts 3 integer values a, b, c. The function should return true if a triangle can be built with the sides of given length and false in any other case.
@@ -663,3 +662,21 @@ console.log('3/26/23 JavaScript code challenges practice');
 
  console.log('Given side lengths of 5, 6, and 11, can a triangle be built?', isTriangle(5, 6, 11));
  console.log('Given side lengths of 5, 4, and 3, can a triangle be built?', isTriangle(5, 4, 3));
+
+
+ console.log('3/29/23 JavaScript code challenges practice');
+ /**
+ * From Codewars:
+ * Create a function that when provided with a triplet, returns the index of the numerical element that lies between the other two elements. 
+ * The input to the function will be an array of three distinct numbers.
+ */
+
+ function indexWedge(numberArray) {
+    // sort the original array by value with spread operator to return shallow copy
+    const sortedArray = [...numberArray].sort((a, b) => (a-b))
+    // sortedArray at index 1 is middle element in array of three numbers
+    return numberArray.indexOf(sortedArray[1]);
+ }
+
+ console.log('The index of the number whose value lies between the other two in array [5, 8, 6] is', indexWedge([5,8,6]));
+ console.log('The index of the number whose value lies between the other two in array [1, 0, 12] is', indexWedge([1,0,12]));
