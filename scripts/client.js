@@ -680,3 +680,39 @@ console.log('3/26/23 JavaScript code challenges practice');
 
  console.log('The index of the number whose value lies between the other two in array [5, 8, 6] is', indexWedge([5,8,6]));
  console.log('The index of the number whose value lies between the other two in array [1, 0, 12] is', indexWedge([1,0,12]));
+
+ console.log('4/1/23 JavaScript code challenges practice');
+
+ /**
+  * From Codewars:
+  * Given a string of words, you need to find the highest scoring word. Each letter of a word scores points according to its position in the alphabet:
+  * You need to return the highest scoring word as a string. 
+ */
+
+ function wordScore(string) {
+    const scoreArray = [];
+    const stringArray = string.split(" ");
+    // loop over words
+    for (let i=0; i<stringArray.length; i+=1) {
+        const word = stringArray[i];
+        // set word score back to zero once pushd to the scoreArray
+        let wordScore = 0;
+        // loop over letters
+        for(let j=0; j< word.length; j+=1) {
+            const letter = word[j]
+            const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+            // index of letter +1 to get alphabet score
+            let letterScore = alphabet.indexOf(letter) + 1;
+            wordScore+=letterScore;
+        }
+        // push score for given word into scoreArray
+        scoreArray.push(wordScore)
+    }
+    // get the max score in the array using reduce and Math.max
+    const maxScore = scoreArray.reduce((a,b) => Math.max(a,b));
+    // return string with highest value by matching the index of the max score to the index of the word in the array
+    return stringArray[scoreArray.indexOf(maxScore)];
+ }
+
+ console.log('The word with the highest score from string \'dogs cats ant owl\' is', wordScore('dogs cat ant owl'));
+ console.log('The word with the highest score from string \'emu antelope cow ferret\' is', wordScore('emu antelope cow ferret'));
