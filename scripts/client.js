@@ -716,3 +716,31 @@ console.log('3/26/23 JavaScript code challenges practice');
 
  console.log('The word with the highest score from string \'dogs cats ant owl\' is', wordScore('dogs cat ant owl'));
  console.log('The word with the highest score from string \'emu antelope cow ferret\' is', wordScore('emu antelope cow ferret'));
+
+ console.log('4/2/23 JavaScript code challenges practice');
+
+ /**
+  * From Codewars:
+  * Return the number (count) of vowels in the given string.
+  * The input string will only consist of lower case letters and/or spaces.
+ */
+
+ function vowelCount(string) {
+    const stringArray = string.split("");
+    let count = 0;
+    for(let i=0; i<stringArray.length; i+=1) {
+        switch(stringArray[i]) {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+                count+=1;
+            break;      
+        }
+    }
+    return count;
+ }
+
+ console.log('The count of the vowels in word \'zebra\' is', vowelCount('zebra'));
+ console.log('The count of the vowels in word \'antelope\' is', vowelCount('antelope'));
