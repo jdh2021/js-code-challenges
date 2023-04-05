@@ -744,3 +744,20 @@ console.log('3/26/23 JavaScript code challenges practice');
 
  console.log('The count of the vowels in word \'zebra\' is', vowelCount('zebra'));
  console.log('The count of the vowels in word \'antelope\' is', vowelCount('antelope'));
+
+ console.log('4/4/23 JavaScript code challenges practice');
+
+/**
+  * From Codewars:
+  * ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
+  * If the function is passed a valid PIN, return true, else return false.
+ */
+
+function pinValidate(pin) {
+    let regexPattern = /^(\d{4}|\d{6})$/;
+    return result = regexPattern.test(pin);
+}
+
+console.log('Is 432 a 4- or 6-digit pin?', pinValidate(432));
+console.log('Is 3444 a 4- or 6-digit pin?', pinValidate(3444));
+console.log('Is 98882 a 4- or 6-digit pin?', pinValidate(98882));
