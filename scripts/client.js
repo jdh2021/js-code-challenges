@@ -761,3 +761,30 @@ function pinValidate(pin) {
 console.log('Is 432 a 4- or 6-digit pin?', pinValidate(432));
 console.log('Is 3444 a 4- or 6-digit pin?', pinValidate(3444));
 console.log('Is 98882 a 4- or 6-digit pin?', pinValidate(98882));
+
+console.log('4/8/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Create a function that checks to see if a string has the same amount of 'x's and 'o's. 
+ * It must return a boolean and be case insensitive. The string can contain any character.
+ */
+
+function checkXo(string) {
+    let stringArray=string.toLowerCase().split("");
+    console.log(stringArray);
+    let oCount = 0;
+    let xCount = 0;
+    for (let i=0; i<stringArray.length; i+=1) {;
+        if (stringArray[i] === 'o') {
+            oCount+=1;
+        }
+        if (stringArray[i] === 'x') {
+            xCount+=1;
+        }
+    }
+    return oCount === xCount;
+}
+
+console.log('Does string \'xOxxxo\' have the same number of x\'s and o\'s?', checkXo('xOxxxo'));
+console.log('Does string \'XXoo\' have the same number of x\'s and o\'s?', checkXo('XXoo'));
