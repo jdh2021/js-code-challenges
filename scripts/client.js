@@ -788,3 +788,63 @@ function checkXo(string) {
 
 console.log('Does string \'xOxxxo\' have the same number of x\'s and o\'s?', checkXo('xOxxxo'));
 console.log('Does string \'XXoo\' have the same number of x\'s and o\'s?', checkXo('XXoo'));
+
+console.log('4/9/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars: 
+ * Given an array and limit value, create a function that checks that all values in the array are below or equal to the limit value. 
+ * If they are, return true. If not, return false.
+ */
+
+function belowLimit(array, limit) {
+    // set belowLimit to default to true
+    let belowLimit = true;
+    for(let i = 0; i<array.length; i+=1) {
+        console.log(array[i]);
+        // if any one of the array items if greater than the limit, set belowLimit to false
+        if (array[i] > limit) {
+            belowLimit=false;
+        }
+    }
+    return belowLimit;
+}
+
+console.log('Are all the numbers in array [5, 12.2, 4, -1] below the limit 15?', belowLimit([5, 12.2, 4, -1], 15));
+console.log('Are all the numbers in array [-5, 0, -3, -1.2] below the limit -1?', belowLimit([-5, 0, -3, -1.2], -1));
+
+/**
+ * From Codewars:
+ * Write a function from the following examples:
+ * Examples:
+ * accum("abcd") -> "A-Bb-Ccc-Dddd"
+ * accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+ * accum("cwAt") -> "C-Ww-Aaa-Tttt"
+ * 
+ * The parameter is a string which includes only letters from a..z and A..Z.
+ * 
+ */
+
+function convertString(string) {
+    // split string into array
+    const stringArray = string.split('');
+    const letterRepeat = [];
+    // duplicate each element in array by index value + 1
+    for(let i=0; i<stringArray.length; i+=1) {
+        let letter = stringArray[i];
+        let newString = letter.repeat(i+1);
+        letterRepeat.push(newString)
+    }
+    // map over each item in array to capitalize first letter
+    const capitalizedArray = letterRepeat.map((string) => {
+        let capitalizeFirst = string.charAt().toUpperCase();
+        let lowerCase = string.slice(1).toLowerCase();
+        return capitalizeFirst + lowerCase;
+    });
+    // join elements of array together with '-' as new string
+    let finalString = capitalizedArray.join('-');
+    return finalString;
+}   
+
+console.log('Convert string \'xyz\' to \'X-Yy-Zzz\'', convertString('xyz'));
+console.log('Convert string \'aDea\' to \'A-Dd-Eee-Aaaa\'', convertString('aDea'));
