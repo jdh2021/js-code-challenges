@@ -848,3 +848,34 @@ function convertString(string) {
 
 console.log('Convert string \'xyz\' to \'X-Yy-Zzz\'', convertString('xyz'));
 console.log('Convert string \'aDea\' to \'A-Dd-Eee-Aaaa\'', convertString('aDea'));
+
+console.log('4/12/23 JavaScript code challenges practice');
+
+/**
+* From Codewars:
+* Given two integers a and b, which can be positive or negative, find the sum of all the integers between and including them and return it.
+* If the two numbers are equal return a or b.
+*/
+
+function sumIntegers(a, b) {
+    let total = 0;
+    if (a === b) {
+        total = a;
+    }
+    if (a > b) {
+        // start loop at smaller value b, increase by one up to and including larger value a
+        for (let i=b; i<=a; i+=1) {
+            total+=i;
+        }
+    }
+    if (b > a) {
+        // start loop at smaller value a, increase by one up to and including larger value b
+        for (let i=a; i<=b; i+=1) {
+            total+=i;
+        }
+    }
+    return total;
+}
+
+console.log('The sum of the integers between 5 and 2 inclusive is', sumIntegers(5, 2));
+console.log('The sum of the integers between -1 and 4 inclusive is', sumIntegers(-1, 4));
