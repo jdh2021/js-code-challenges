@@ -879,3 +879,49 @@ function sumIntegers(a, b) {
 
 console.log('The sum of the integers between 5 and 2 inclusive is', sumIntegers(5, 2));
 console.log('The sum of the integers between -1 and 4 inclusive is', sumIntegers(-1, 4));
+
+console.log('4/15/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Write a function that takes a sequence of numbers as single parameter. 
+ * The function must return the sum of the even values of this sequence.
+ * Only numbers without decimals like 4 or 4.0 can be even.
+
+The input is a sequence of numbers: integers and/or floats.
+ */
+
+function sumEvenNumbers(numberArray) {
+    let total = 0;
+    for(let i=0; i<numberArray.length; i+=1) {
+        if (numberArray[i] % 1 === 0 && numberArray[i] % 2 === 0) {
+            total+=numberArray[i]
+        }
+    }
+    return total;
+}
+
+console.log('The sum of the even numbers in [4, 6.0, 7, 2.2] is', sumEvenNumbers([4, 6.0, 7, 2.2]));
+console.log('The sum of the even numbers in [3, 5, 8.8, 4] is', sumEvenNumbers([3, 5, 8.8, 4] ));
+
+/**
+ * From Codewars:
+ * The test fixture:
+ * describe("Tests", () => {
+ * it("test", () => {
+ * var lucky_number = Math.floor(Math.random() * 100 + 1);
+ * Test.assertEquals(guess, lucky_number, "Sorry. Unlucky this time.");
+ * });
+ * });
+ * It will compare your guess to a random number generated using:
+ * Math.floor(Math.random() * 100 + 1)
+ * You can pass by relying on luck or skill but try not to rely on luck.
+ * "The power to define the situation is the ultimate power." - Jerry Rubin
+ */
+
+// redefine Math.floor as a function that returns 10 and set variable guess to 10
+// when lucky_number is set within test, both lucky_number and guess are equal
+Math.floor = function() {
+    return 10;
+}
+let guess = 10;
