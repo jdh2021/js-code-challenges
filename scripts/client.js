@@ -925,3 +925,32 @@ Math.floor = function() {
     return 10;
 }
 let guess = 10;
+
+
+console.log('4/16/23 JavaScript code challenges practice');
+
+/**
+ * Create a function that returns the index of the third instance of a letter in a string.
+ * If the letter doesn't exist in the string or occurs less than three times, return -1.
+ */
+
+function returnThirdIndex(string, letter) {
+    let count = 0;
+    // set index to -1 by default if there are not 3 instances of letter in string
+    let index = -1;
+    const stringArray = string.split("");
+    for(let i=0; i<stringArray.length; i+=1) {
+        if (stringArray[i] === letter && count < 3) {
+            count +=1;
+        }
+        if(stringArray[i] === letter && count === 3) {
+            // pull out the index value when encountering the third instance of the letter and then break out of the loop
+            index = i;
+            break;
+        }
+    }
+    return index;
+}
+
+console.log('The index of the third occurence of letter \'a\' in string \'baracudas are ferocious\' is', returnThirdIndex('baracudas are ferocious', 'a'));
+console.log('The index of the third occurence of letter \'w\' in string \'werewolves\' is', returnThirdIndex('werewolves', 'w'));
