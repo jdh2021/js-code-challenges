@@ -954,3 +954,31 @@ function returnThirdIndex(string, letter) {
 
 console.log('The index of the third occurence of letter \'a\' in string \'baracudas are ferocious\' is', returnThirdIndex('baracudas are ferocious', 'a'));
 console.log('The index of the third occurence of letter \'w\' in string \'werewolves\' is', returnThirdIndex('werewolves', 'w'));
+
+console.log('4/19/23 JavaScript code challenges practice');
+
+/**
+*
+* From Codewars:
+* Create a function returns that true if the first argument (string) passed in ends with the second argument (also a string).
+*
+*/
+
+function endsWithString (string, endString) {
+    // default for letterMatch is true
+    let letterMatch = true;
+    // looking for matches at end of string. reverse both strings to start comparing at index 0 
+    const stringArray = string.split("").reverse()
+    const endStringArray = endString.split("").reverse()
+    // loop over endStringArray - those are the only characters that need to match
+    for (let i = 0; i < endStringArray.length; i+=1) {
+        // if characters in endStringArray don't match with characters in stringArray at same index, immediately return false
+        if(endStringArray[i] !== stringArray[i]) {
+            return letterMatch = false;
+        } 
+    }
+    return letterMatch;
+}
+
+console.log('Does string \'meow\' end with \'eow\'?', endsWithString('meow', 'eow'));
+console.log('Does string \'otter\' end with \'trr\'?', endsWithString('otter', 'trr'))
