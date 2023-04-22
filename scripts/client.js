@@ -982,3 +982,34 @@ function endsWithString (string, endString) {
 
 console.log('Does string \'meow\' end with \'eow\'?', endsWithString('meow', 'eow'));
 console.log('Does string \'otter\' end with \'trr\'?', endsWithString('otter', 'trr'))
+
+console.log('4/22/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * 
+ * Create a function to return true if two arguments are anagrements of each other
+ * Note: anagrams are case insensitive
+ 
+ */
+
+function anagramCheck(firstInput, secondInput) {
+    let isAnagram = true;
+    // check stringth length first and return false if not equal
+    if (firstInput.length !== secondInput.length) {
+        return isAnagram = false;
+    }
+    // convert characters all to lower case, create array by character and sort
+    const firstInputArray = firstInput.toLowerCase().split("").sort()
+    const secondInputArray = secondInput.toLowerCase().split("").sort()
+    // loop over each element in first array and compare to element in second array at same index
+    for (let i=0; i<firstInputArray.length; i+=1) {
+        if (firstInputArray[i] !== secondInputArray[i]) {
+            return isAnagram = false;
+        }
+    }
+    return isAnagram;
+}
+
+console.log('Are \'angered\' and \'Enraged\' anagrams?', anagramCheck('angered', 'Enraged'));
+console.log('Are \'apple\' and \'app\' anagrams?', anagramCheck('apple', 'app'));
