@@ -1013,3 +1013,30 @@ function anagramCheck(firstInput, secondInput) {
 
 console.log('Are \'angered\' and \'Enraged\' anagrams?', anagramCheck('angered', 'Enraged'));
 console.log('Are \'apple\' and \'app\' anagrams?', anagramCheck('apple', 'app'));
+
+
+console.log('4/23/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Take 2 strings s1 and s2 including only letters from a to z. 
+ * Return a new sorted string, the longest possible, containing distinct letters - each taken only once - coming from s1 or s2.
+ */
+
+function sortString(stringOne, stringTwo) {
+    // concatenate strings, split into array and sort
+    let concatArray = stringOne.concat(stringTwo).toLowerCase().split("").sort();
+    // loop over array, compare first index to last index. 
+    for(let i=0; i<concatArray.length; i+=1) {
+        // if first index is not equal to last index, remove duplicates
+        if(concatArray.indexOf(concatArray[i]) !== concatArray.lastIndexOf(concatArray[i])) {
+            // splice starting at index, number of items to splice is last index less starting index
+            concatArray.splice(i, ((concatArray.lastIndexOf(concatArray[i]))-i));
+        } 
+    }
+    // join elements in array as string and return final string
+    return concatArray.join("");
+}    
+
+console.log('Alphabetically sort and combine string \'cabb\' and string \'zzxyc\' into one string containing unique lettters:', sortString('cabb', 'zzxyc'));
+console.log('Alphabetically sort and combine string \'zoff\' and string \'lrka\' into one string containing unique lettters:', sortString('Zoff', 'lrKa'));
