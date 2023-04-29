@@ -1040,3 +1040,25 @@ function sortString(stringOne, stringTwo) {
 
 console.log('Alphabetically sort and combine string \'cabb\' and string \'zzxyc\' into one string containing unique lettters:', sortString('cabb', 'zzxyc'));
 console.log('Alphabetically sort and combine string \'zoff\' and string \'lrka\' into one string containing unique lettters:', sortString('Zoff', 'lrKa'));
+
+console.log('4/29/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * For a list of integers, create a function to determine whether the sum of its elements is odd or even.
+ * Return a string for 'odd' or 'even'
+ */
+
+function checkOddEven(numberArray) {
+    let sum = 0;
+    for (let i=0; i<numberArray.length; i+=1) {
+        sum+=numberArray[i];
+    }
+    if (sum % 2 === 0) {
+        return 'even';
+    }
+    return 'odd';
+}    
+
+console.log('Is the sum of [4, 5, 8, 2] odd or even:', checkOddEven([4, 5, 8, 2]));
+console.log('Is the sum of [0] odd or even:', checkOddEven([]));
