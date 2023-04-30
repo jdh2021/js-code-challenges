@@ -1062,3 +1062,23 @@ function checkOddEven(numberArray) {
 
 console.log('Is the sum of [4, 5, 8, 2] odd or even:', checkOddEven([4, 5, 8, 2]));
 console.log('Is the sum of [0] odd or even:', checkOddEven([]));
+
+console.log('4/30/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Create a function that finds the next perfecet integral square after passed a perfect square as a parameter.
+ * If the parameter passed is not a perfect square, return -1. 
+ * 
+ */
+
+function nextSquare(number) {
+    if (Number.isInteger(Math.sqrt(number))) {
+        let nextInteger =  Math.sqrt(number) + 1;
+        return nextInteger * nextInteger;
+    }
+    return -1;
+}    
+
+console.log('The next perfect square from 144 is:', nextSquare(144));
+console.log('Return -1 when the number 18 is not a perfect square:', nextSquare(18));
