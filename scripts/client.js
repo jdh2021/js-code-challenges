@@ -1082,3 +1082,26 @@ function nextSquare(number) {
 
 console.log('The next perfect square from 144 is:', nextSquare(144));
 console.log('Return -1 when the number 18 is not a perfect square:', nextSquare(18));
+
+console.log('5/6/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Create a function that takes in an integer as an input and returns the closest multiple of 5.
+ * 
+ */
+
+function multipleFive(integer) {
+    if(integer % 5 === 0) {
+        return integer;
+    } else if (integer > 0) {
+        return (Math.trunc(integer/5) * 5 + 5);
+    } else {
+        return (Math.trunc(integer/5) * 5);
+    }
+}
+
+console.log('The closest multiple of 5 from integer 5 is', multipleFive(5));
+console.log('The closest multiple of 5 from integer 1 is', multipleFive(1));
+console.log('The closest multiple of 5 from integer 12 is', multipleFive(12));
+console.log('The closest multiple of 5 from integer -23 is', multipleFive(-24));
