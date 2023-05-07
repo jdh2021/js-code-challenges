@@ -1104,4 +1104,31 @@ function multipleFive(integer) {
 console.log('The closest multiple of 5 from integer 5 is', multipleFive(5));
 console.log('The closest multiple of 5 from integer 1 is', multipleFive(1));
 console.log('The closest multiple of 5 from integer 12 is', multipleFive(12));
-console.log('The closest multiple of 5 from integer -23 is', multipleFive(-24));
+console.log('The closest multiple of 5 from integer -23 is', multipleFive(-23));
+
+console.log('5/7/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Create a function that takes in an empty string and checks whether it's an isogram (it has no repeating letters, consecutive or non-consecutiv). 
+ * 
+ */
+
+function checkIsogram(string) {
+    const letterArray = string.toLowerCase().split("");
+    for (let i=0; i<letterArray.length; i+=1) {
+        // checking for consecutive repeats
+        if (letterArray[i] === letterArray[i + 1]) {
+            return false;
+        }
+        // checking for non-consecutive repeats
+        if (letterArray.indexOf(letterArray[i]) !== letterArray.lastIndexOf(letterArray[i])) {
+            console.log(letterArray.indexOf(i));
+            return false;
+        }
+    }
+    return true;
+}
+
+console.log('Is \'caRrot\' an isogram?', checkIsogram('carrot'));
+console.log('Is \'zebra\' an isogram?', checkIsogram('zebra'));
