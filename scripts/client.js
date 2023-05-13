@@ -1132,3 +1132,26 @@ function checkIsogram(string) {
 
 console.log('Is \'caRrot\' an isogram?', checkIsogram('carrot'));
 console.log('Is \'zebra\' an isogram?', checkIsogram('zebra'));
+
+console.log('5/13/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Write a function that takes in an array that has a single unique number and returns the unique number.
+ * 
+ */
+
+function findUnique(array) {
+    // order items in array
+    array.sort();
+    // if the first two numbers are equal, the unique number is the last
+    if(array[0] === array[1]) {
+        return array[array.length-1];
+    } else {
+        // if the first two numbers are not equal, the unique number is the first
+        return array[0];
+    }
+}
+
+console.log('The unique number in array [ 1, 1, 1, 2, 1, 1 ] is', findUnique([ 1, 1, 1, 2, 1, 1 ]));
+console.log('The unique number in array [ 0.25, 8, 8, 8, 8, 8 ] is', findUnique([ 0.25, 8, 8, 8, 8, 8 ]));
