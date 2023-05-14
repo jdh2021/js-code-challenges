@@ -1155,3 +1155,21 @@ function findUnique(array) {
 
 console.log('The unique number in array [ 1, 1, 1, 2, 1, 1 ] is', findUnique([ 1, 1, 1, 2, 1, 1 ]));
 console.log('The unique number in array [ 0.25, 8, 8, 8, 8, 8 ] is', findUnique([ 0.25, 8, 8, 8, 8, 8 ]));
+
+console.log('5/14/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Given a string of digits, write a function to replace any digit below 5 with '0' and any digit 5 and above with '1'. Return the string.
+ */
+
+function replaceDigit(string) {
+    const array = [];
+    for (let digit of string) {
+        digit >= '5' ? array.push(1) : array.push(0);
+    }
+    return array.join("");
+}
+
+console.log('String \'098216\' converted to \'0\' for any digit below 5 and \'1\' for any digit 5 and above is:', replaceDigit('098216'));
+console.log('String \'562201\' converted to \'0\' for any digit below 5 and \'1\' for any digit 5 and above is:', replaceDigit('562201'));
