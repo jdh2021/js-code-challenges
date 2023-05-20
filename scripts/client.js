@@ -1173,3 +1173,19 @@ function replaceDigit(string) {
 
 console.log('String \'098216\' converted to \'0\' for any digit below 5 and \'1\' for any digit 5 and above is:', replaceDigit('098216'));
 console.log('String \'562201\' converted to \'0\' for any digit below 5 and \'1\' for any digit 5 and above is:', replaceDigit('562201'));
+
+console.log('5/20/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Create a function that takes two integers in the form of a string and outputs the sum as a string.
+ * 
+ */
+
+function sumStrings(stringOne, stringTwo) {
+    let sum = Number(stringOne) + Number(stringTwo);
+    return sum.toString();
+}
+
+console.log('The sum of \'5\' and \'-1\' is', sumStrings('5', '-1'));
+console.log('The sum of \'120\' and \'4.8\' is', sumStrings('120', '4.8'));
