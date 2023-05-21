@@ -1189,3 +1189,28 @@ function sumStrings(stringOne, stringTwo) {
 
 console.log('The sum of \'5\' and \'-1\' is', sumStrings('5', '-1'));
 console.log('The sum of \'120\' and \'4.8\' is', sumStrings('120', '4.8'));
+
+console.log('5/21/23 JavaScript code challenges practice');
+
+function countCharacters(string) {
+    let object = {};
+    const array = string.split("");
+    for (let i = 0; i < array.length; i +=1 ) {
+        // each character in string will start with count of 1
+        let count = 1;
+        // nested loop to check each character against all other characters in string for equality
+        for(let j = 0; j < array.length; j +=1) {
+            //conditional that checks that indexes are not the same so duplicate count is avoided
+            if (array[i] === array[j] && (i !== j)) {
+                count +=1;
+            }
+            // setting the key of object as character at index and value as count 
+            object[array[i]] = count;
+        }
+    }
+    return object;    
+}
+
+console.log('The count of characters in string \'summer\' is', countCharacters('summer'));
+console.log('The count of characters in string \'zzzz\' is', countCharacters('zzzz'));
+console.log('The count of characters in string \'\'\ is', countCharacters(''));
