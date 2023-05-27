@@ -1214,3 +1214,26 @@ function countCharacters(string) {
 console.log('The count of characters in string \'summer\' is', countCharacters('summer'));
 console.log('The count of characters in string \'zzzz\' is', countCharacters('zzzz'));
 console.log('The count of characters in string \'\'\ is', countCharacters(''));
+
+
+console.log('5/27/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Create a function that takes two integers (a, b, where a < b).
+ * Return an array of all integers between the input parameters, including them.
+ * 
+ */
+
+function inBetween(a, b) {
+    const array = [];
+    array.push
+    while(a <= b) {
+        array.push(a);
+        a+=1;
+    }
+    return array;
+}
+
+console.log('An array of integers between 3 and 7 inclusive is', inBetween(3,7));
+console.log('An array of integers between -1 and 10 inclusive is', inBetween(-1,10));
