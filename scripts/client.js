@@ -1237,3 +1237,30 @@ function inBetween(a, b) {
 
 console.log('An array of integers between 3 and 7 inclusive is', inBetween(3,7));
 console.log('An array of integers between -1 and 10 inclusive is', inBetween(-1,10));
+
+console.log('5/28/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Create a function that takes in a string and returns the string with all vowels removed.
+ * 
+ */
+
+function removeVowels(string) {
+    const array = string.split("");
+    const newArray = [];
+    for(let i=0; i<array.length; i+=1) {
+        switch (array[i].toLowerCase()) {
+            case 'a': case 'e': case 'i': case 'o': case 'u': 
+                newArray.push("")
+                break;
+            default:
+                newArray.push(array[i])
+                break;    
+        }
+    }
+    return newArray.join("")
+}    
+
+console.log('String \'Hello, it\'s me\' with all the vowels removed is', removeVowels("Hello, it's me!"))
+console.log('String \'the lion is ROAMING?\' with all the vowels removed is', removeVowels("the Lion is ROAMING?"))
