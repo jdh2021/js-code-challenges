@@ -1264,3 +1264,23 @@ function removeVowels(string) {
 
 console.log('String \'Hello, it\'s me\' with all the vowels removed is', removeVowels("Hello, it's me!"))
 console.log('String \'the lion is ROAMING?\' with all the vowels removed is', removeVowels("the Lion is ROAMING?"))
+
+
+console.log('6/3/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Create a function that takes in a string and returns the string where each character is repeated once.
+ * 
+ */
+
+function doubleCharacters(string) {
+    let finalString = '';
+    for (let i=0; i<string.length; i+=1) {
+        finalString+=string[i] + string[i];
+    }
+    return finalString;
+}
+
+console.log('String \'vehicles\' with all the characters doubled is', doubleCharacters('vehicles'));
+console.log('String \'zebra\' with all the characters doubled is', doubleCharacters('zebra'));
