@@ -1284,3 +1284,30 @@ function doubleCharacters(string) {
 
 console.log('String \'vehicles\' with all the characters doubled is', doubleCharacters('vehicles'));
 console.log('String \'zebra\' with all the characters doubled is', doubleCharacters('zebra'));
+
+console.log('6/4/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Write a function which calculates the average of the numbers in a given list.
+ */
+
+function findAverage(numberArray) {
+    let count=0;
+    let sum=0;
+    if (numberArray.length > 0) {
+        for(let i=0; i<numberArray.length; i+=1) {
+            sum+=numberArray[i];
+            count+=1;
+        }
+        return sum/count;
+    } else {
+        return 0;
+    } 
+}
+
+console.log('The average of numbers [5, 6, 1, 4] is',  findAverage([5, 6, 1, 4]));
+console.log('The avearge of numbers [0, 3, -11] is', findAverage([0, 3, -11]));
+
+
+
