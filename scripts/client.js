@@ -1309,5 +1309,17 @@ function findAverage(numberArray) {
 console.log('The average of numbers [5, 6, 1, 4] is',  findAverage([5, 6, 1, 4]));
 console.log('The avearge of numbers [0, 3, -11] is', findAverage([0, 3, -11]));
 
+console.log('6/24/23 JavaScript code challenges practice');
 
+/**
+ * From Codewars:
+ * Given a string, reverse it and omit all non-alphabetic characters.
+ */
 
+function reverseOmit(string) {
+    // match returns array from regex pattern, array is reversed and joined again as string 
+    return string.match(/[a-zA-Z]/g).reverse().join("");
+}
+
+console.log('String \'ab1!cdef\' reversed with non-alphabet characters removed is:', reverseOmit('ab1!cdef'));
+console.log('String \'Z*e$bRa\' reversed with non-alphabet characters removed is:', reverseOmit('Z*e$bRa'));
