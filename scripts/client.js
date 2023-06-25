@@ -1323,3 +1323,22 @@ function reverseOmit(string) {
 
 console.log('String \'ab1!cdef\' reversed with non-alphabet characters removed is:', reverseOmit('ab1!cdef'));
 console.log('String \'Z*e$bRa\' reversed with non-alphabet characters removed is:', reverseOmit('Z*e$bRa'));
+
+console.log('6/25/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Given a word, return the middle character of the word. If the word's length is odd, return the middle character. 
+ * If the word's length is even, return the middle two characters. 
+ */
+
+function getMiddleCharacter(word) {
+    if (word.length % 2 === 0) {
+        return word.charAt((word.length/2)-1).concat(word.charAt((word.length/2)));
+    } else {
+        return word.charAt((word.length/2));
+    }
+}
+
+console.log('The middle character in word \'car\' is:', getMiddleCharacter('car'));
+console.log('The middle character in word \'alligators\' is:', getMiddleCharacter('alligators'));
