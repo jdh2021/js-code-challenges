@@ -1342,3 +1342,24 @@ function getMiddleCharacter(word) {
 
 console.log('The middle character in word \'car\' is:', getMiddleCharacter('car'));
 console.log('The middle character in word \'alligators\' is:', getMiddleCharacter('alligators'));
+
+console.log('7/1/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Create a function that takes an integer as input and returns the sum of the absolute value of each of the integer's digits.
+ */
+
+function sumDigits(integer) {
+    let array = integer.toString().split("");
+    let sum = 0;
+    for(let i = 0; i<array.length; i+=1) {
+        if(array[i] != '-') {
+            sum+=Number(array[i]);
+        }
+    }
+    return sum;
+}
+
+console.log('The sum of the absolute value of the digits in -345 is:', sumDigits(-345));
+console.log('The sum of the absolute value of the digits in 101 is:', sumDigits(101));
