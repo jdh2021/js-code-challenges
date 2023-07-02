@@ -1363,3 +1363,23 @@ function sumDigits(integer) {
 
 console.log('The sum of the absolute value of the digits in -345 is:', sumDigits(-345));
 console.log('The sum of the absolute value of the digits in 101 is:', sumDigits(101));
+
+console.log('7/2/23 JavaScript code challenges practice');
+
+/**
+ * Create a function that determines whether a given year is a leap year.
+ */
+
+function checkLeapYear(year) {
+    // check most specific condition first - divisible by 100 but not by 400
+    if((year % 100) === 0 && (year % 400) !== 0) {
+        return false;
+    }
+    if(year % 4 === 0) {
+        return true;
+    }
+    return false;
+}
+
+console.log('Is 2020 a leap year?', checkLeapYear(2020));
+console.log('Is 1800 a leap year?', checkLeapYear(1800));
