@@ -1383,3 +1383,18 @@ function checkLeapYear(year) {
 
 console.log('Is 2020 a leap year?', checkLeapYear(2020));
 console.log('Is 1800 a leap year?', checkLeapYear(1800));
+
+console.log('7/7/23 JavaScript code challenges practice');
+
+/** 
+* Given an array of arrays, flatten them into a single array.
+*/
+
+function flattenArray(array) {
+    return flattenedArray = array.reduce(
+        // initialValue not set - accumulator is first value in array. callback executes on second value as currentValue
+        (accumulator, currentValue) => accumulator.concat(currentValue)
+    );
+}
+
+console.log('Array [[0, true], [\'dog\', \'cat\'], [9, 8, 3]] flattened into a single array is:', flattenArray([[0, true], ['dog', 'cat'], [9, 8, 3]]));
