@@ -1398,3 +1398,17 @@ function flattenArray(array) {
 }
 
 console.log('Array [[0, true], [\'dog\', \'cat\'], [9, 8, 3]] flattened into a single array is:', flattenArray([[0, true], ['dog', 'cat'], [9, 8, 3]]));
+
+console.log('7/8/23 JavaScript code challenges practice');
+
+console.log('7/7/23 JavaScript code challenges practice');
+
+/**
+ * Given an array of strings, return a new array that only includes those that are 5 characters or fewer in length.
+ */
+
+function filterArray(array) {
+    return array.filter(string => string.length <= 5);
+}
+
+console.log('Array of strings [\'hello\', \'goodbye\', \'dogs\', \'cat\'] returned with values that only include 5 characters or fewer is', filterArray(['hello', 'goodbye', 'dogs', 'cat']));
