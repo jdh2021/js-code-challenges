@@ -1401,8 +1401,6 @@ console.log('Array [[0, true], [\'dog\', \'cat\'], [9, 8, 3]] flattened into a s
 
 console.log('7/8/23 JavaScript code challenges practice');
 
-console.log('7/7/23 JavaScript code challenges practice');
-
 /**
  * Given an array of strings, return a new array that only includes those that are 5 characters or fewer in length.
  */
@@ -1412,3 +1410,37 @@ function filterArray(array) {
 }
 
 console.log('Array of strings [\'hello\', \'goodbye\', \'dogs\', \'cat\'] returned with values that only include 5 characters or fewer is', filterArray(['hello', 'goodbye', 'dogs', 'cat']));
+
+console.log('7/15/23 JavaScript code challenges practice');
+
+/**
+ * Create a function that takes in two objects, completes a shallow merge, and returns the new object.
+ */
+
+const objectOne = {
+    garage: true,
+    car: { 
+        color: 'green', 
+        year: 2013 
+    },
+    bicycle: { 
+        year: 2019 
+    }
+}
+
+const objectTwo = {
+    garage: false,
+    car: { 
+        transmission: 'manual', 
+        make: 'Kia' 
+    }, 
+    bicycle: { 
+        make: 'Schwinn'
+    }
+} 
+
+function shallowMerge(objectOne, objectTwo) {
+    return {...objectOne, ...objectTwo}
+}
+
+console.log('Shallow merging objectOne = {garage: true, car: {color: \'green\', year: 2013}, bicycle: {year: 2019}} with objectTwo = {garage: false, car: {transmission: \'manual\', make: \'Kia\'}, bicycle: {make: \'Schwinn\'}} is', shallowMerge(objectOne, objectTwo))
