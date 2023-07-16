@@ -1444,3 +1444,19 @@ function shallowMerge(objectOne, objectTwo) {
 }
 
 console.log('Shallow merging objectOne = {garage: true, car: {color: \'green\', year: 2013}, bicycle: {year: 2019}} with objectTwo = {garage: false, car: {transmission: \'manual\', make: \'Kia\'}, bicycle: {make: \'Schwinn\'}} is', shallowMerge(objectOne, objectTwo))
+
+console.log('7/16/23 JavaScript code challenges practice');
+
+/**
+ * Write a functoin that takes in an array of names and returns the array with the first letter of each name capitalized.
+ * 
+ */
+
+function capitalize(array) {
+    let finalArray = array.map(name => 
+        name[0].toUpperCase() + name.substring(1)
+    )
+    return finalArray;
+}
+
+console.log('Array of names [\'mike\', \'jessica\', \'aaron\', \'dana\'] returned with the first letter capitalized is:', capitalize(['mike', 'jessica', 'aaron', 'dana']))
