@@ -1448,7 +1448,7 @@ console.log('Shallow merging objectOne = {garage: true, car: {color: \'green\', 
 console.log('7/16/23 JavaScript code challenges practice');
 
 /**
- * Write a functoin that takes in an array of names and returns the array with the first letter of each name capitalized.
+ * Write a function that takes in an array of names and returns the array with the first letter of each name capitalized.
  * 
  */
 
@@ -1460,3 +1460,22 @@ function capitalize(array) {
 }
 
 console.log('Array of names [\'mike\', \'jessica\', \'aaron\', \'dana\'] returned with the first letter capitalized is:', capitalize(['mike', 'jessica', 'aaron', 'dana']))
+
+console.log('7/22/23 JavaScript code challenges practice');
+
+/**
+ * Write a function that takes in an object and returns an array of key-value pairs.
+ * 
+ */
+
+const person = {
+    name: 'Alex',
+    cities: ['London', 'Rome', 'Tampa'],
+    age: 41
+}
+
+function convertObject(person) {
+    return Object.entries(person);
+}
+
+console.log('Object { name: \'Alex\', cities: [\'London\', \'Rome\', \'Tampa\'], age: 41 } converted to an array is', convertObject(person));
