@@ -1479,3 +1479,26 @@ function convertObject(person) {
 }
 
 console.log('Object { name: \'Alex\', cities: [\'London\', \'Rome\', \'Tampa\'], age: 41 } converted to an array is', convertObject(person));
+
+
+console.log('7/23/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars: 
+ * Your task is to write a function which returns the sum of a sequence of integers.
+ * The sequence is defined by 3 non-negative values: begin, end, step.
+ * If begin value is greater than the end, your function should return 0. 
+ * If end is not the result of an integer number of steps, then don't add it to the sum. See the 4th example below
+ */
+
+
+function sumIntegers(begin, end, step) {
+    let sum = 0;
+    for (let i=begin; i<=end; i+=step) {
+        sum+=i;
+    }
+    return sum;
+}
+
+console.log('The sum of the sequence of integers 5 (begin), 7 (end), 3 (increment)', sumIntegers(5, 7, 3));
+console.log('The sum of the sequence of integers 4 (begin), 6 (end), 1 (increment)', sumIntegers(4, 6, 1));
