@@ -1502,3 +1502,24 @@ function sumIntegers(begin, end, step) {
 
 console.log('The sum of the sequence of integers 5 (begin), 7 (end), 3 (increment)', sumIntegers(5, 7, 3));
 console.log('The sum of the sequence of integers 4 (begin), 6 (end), 1 (increment)', sumIntegers(4, 6, 1));
+
+/**
+ * From Codewars:
+ * Implement a function that returns the minimal and the maximal value of a list (in this order).
+ * 
+ */
+
+console.log('7/29/23 JavaScript code challenges practice');
+
+function minValMaxVal(numberArray) {
+    let minVal = numberArray.reduce((prevVal, currentVal) => 
+        Math.min(prevVal, currentVal) 
+    );
+    let maxVal = numberArray.reduce((prevVal, currentVal) => 
+        Math.max(prevVal, currentVal) 
+    );
+    return [minVal, maxVal];
+}
+
+console.log('The minimum and maximum values from array [-1, 8, 1000, 0] are', minValMaxVal([-1, 8, 1000, 0]));
+console.log('The minimum and maximum values from array [12, -15.2, 40000, 0.5] are', minValMaxVal([12, -15.2, 40000, 0.5]));
