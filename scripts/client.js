@@ -1523,3 +1523,21 @@ function minValMaxVal(numberArray) {
 
 console.log('The minimum and maximum values from array [-1, 8, 1000, 0] are', minValMaxVal([-1, 8, 1000, 0]));
 console.log('The minimum and maximum values from array [12, -15.2, 40000, 0.5] are', minValMaxVal([12, -15.2, 40000, 0.5]));
+
+
+console.log('7/30/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars: 
+ * Build a function that returns an array of integers from n to 1 where n > 0.
+ */
+
+function countDown(numberStart) {
+    // length creates a placeholder array with length of numberStart
+    // integer, index is map function, sets value of each item in numberArray as index plus 1 (0+1, 1+1, 2+1, etc.)
+    // reverse reverses the order of the items in numberArray
+    return numberArray = Array.from({length: numberStart}, (integer, index) => integer = index + 1).reverse();
+}
+
+console.log('Array of integers counting down from 8 to 1 is', countDown(8));
+console.log('Array of integers counting down from 1 to 1 is', countDown(1));
