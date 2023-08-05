@@ -1541,3 +1541,28 @@ function countDown(numberStart) {
 
 console.log('Array of integers counting down from 8 to 1 is', countDown(8));
 console.log('Array of integers counting down from 1 to 1 is', countDown(1));
+
+
+console.log('8/5/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars: 
+ * Given a string, replace every letter with its position in the alphabet and return as a string.
+ * If anything in the text isn't a letter, ignore it and don't return it.
+ */
+
+
+function alphabetPosition(string) {
+    const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    const positionArray = [];
+    for(let character of string) {
+        for(let letter of alphabet) {
+            if(character.toLowerCase() === letter) {
+                positionArray.push(alphabet.indexOf(letter)+1);
+            }
+        }
+    }    
+    return positionArray.join(' ');
+}
+
+console.log('String \'A summer day!\' with each letter returned as its position in the alphabet is:', alphabetPosition('A summer day!'));
