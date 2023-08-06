@@ -1566,3 +1566,30 @@ function alphabetPosition(string) {
 }
 
 console.log('String \'A summer day!\' with each letter returned as its position in the alphabet is:', alphabetPosition('A summer day!'));
+
+
+console.log('8/6/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars: 
+ * Sum all the numbers of a given array, except the highest and lowest elements.
+ * 
+*/
+
+function removeLowHigh(array) {
+    let sum = 0;
+    if(array) {
+        // sort ascending
+        array.sort(function(a,b) {
+            return a-b;
+        });
+        // start at index that is one greater than lowest value, end at element that is one less than highest vlaue
+        for(let i=1; i<array.length-1; i+=1) {
+            sum+=array[i];
+        }
+    }   
+   return sum;
+}
+
+console.log('For array [10, 0, 5, 20], the sum of the numbers except the highest and lowest values is', removeLowHigh([10, 0, 5, 20]));
+console.log('For array [-3.2, 8.2], the sum of the numbers except the highest and lowest values is', removeLowHigh([-3.2, 8.2]));
