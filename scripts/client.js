@@ -1593,3 +1593,30 @@ function removeLowHigh(array) {
 
 console.log('For array [10, 0, 5, 20], the sum of the numbers except the highest and lowest values is', removeLowHigh([10, 0, 5, 20]));
 console.log('For array [-3.2, 8.2], the sum of the numbers except the highest and lowest values is', removeLowHigh([-3.2, 8.2]));
+
+console.log('8/12/23 JavaScript code challenges practice')
+
+/**
+ * From Codewars: 
+ * A pangram is a sentence that contains every single letter of the alphabet at least once. 
+ * Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
+*/
+
+function isPangram(string) {
+    const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    // convert string to lower case array
+    const characterArray = string.toLowerCase().split("");
+    for (let character of characterArray) {
+        if (alphabet.indexOf(character) != -1) {
+            // remove letter from alphabet array if index of is not -1
+            alphabet.splice(alphabet.indexOf(character), 1);
+        }
+    }
+    // if length of alphabet array is 0, all letters were removed, and sentence is pangram
+    return alphabet.length === 0 ? true : false;
+}    
+
+  
+
+console.log('Is the sentence \'Sixty zippers were quickly picked from the woven jute bag.\' a pangram?:', isPangram('Sixty zippers were quickly picked from the woven jute bag.'));
+console.log('Is the sentence \'How are you today?\' a pangram?:', isPangram('How are you today?'));
