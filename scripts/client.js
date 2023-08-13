@@ -1617,6 +1617,21 @@ function isPangram(string) {
 }    
 
   
-
 console.log('Is the sentence \'Sixty zippers were quickly picked from the woven jute bag.\' a pangram?:', isPangram('Sixty zippers were quickly picked from the woven jute bag.'));
 console.log('Is the sentence \'How are you today?\' a pangram?:', isPangram('How are you today?'));
+
+console.log('8/13/23 JavaScript code challenges practice')
+
+/**
+ * From Codewars:
+ * Given an array of integers, return a new array with each value doubled.
+*/
+
+function mapIntegers(array) {
+    return array.map(integer => 
+        integer * 2
+    );
+}
+
+console.log('Array of integers [0, -1, 2] returned with each value doubled is', mapIntegers([0, -1, 2]));
+console.log('Array of integers [4, 3, 10] returned with each value doubled is', mapIntegers([4, 3, 10]));
