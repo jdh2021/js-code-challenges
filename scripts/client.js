@@ -1635,3 +1635,30 @@ function mapIntegers(array) {
 
 console.log('Array of integers [0, -1, 2] returned with each value doubled is', mapIntegers([0, -1, 2]));
 console.log('Array of integers [4, 3, 10] returned with each value doubled is', mapIntegers([4, 3, 10]));
+
+console.log('8/19/23 JavaScript code challenges practice')
+
+console.log('8/13/23 JavaScript code challenges practice')
+
+/**
+ * From Codewars:
+ * Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string.
+ * 
+*/
+
+function countDistinct(string) {
+    let arrayToSearch = string.toLowerCase().split("");
+    const matchFound = [];
+    for (let i=0; i<arrayToSearch.length; i+=1) {
+        for (let j=0; j<arrayToSearch.length; j+=1) {
+            // check values are equal, not in same position, and not already added to matchFound array
+            if (arrayToSearch[i] === arrayToSearch[j] && i !== j && !matchFound.includes(arrayToSearch[i])) {
+                matchFound.push(arrayToSearch[i]);
+            }
+        } 
+    }
+    return matchFound.length;
+}
+
+console.log('The count of distinct, case-insensitive characters or digits that occur more than once in string \'1amAa1\' is', countDistinct('1amAa1'));
+console.log('The count of distinct, case-insensitive characters or digits that occur more than once in string \'bBzz44o\' is', countDistinct('bBzz44o'));
