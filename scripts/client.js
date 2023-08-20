@@ -1620,7 +1620,7 @@ function isPangram(string) {
 console.log('Is the sentence \'Sixty zippers were quickly picked from the woven jute bag.\' a pangram?:', isPangram('Sixty zippers were quickly picked from the woven jute bag.'));
 console.log('Is the sentence \'How are you today?\' a pangram?:', isPangram('How are you today?'));
 
-console.log('8/13/23 JavaScript code challenges practice')
+console.log('8/13/23 JavaScript code challenges practice');
 
 /**
  * From Codewars:
@@ -1636,9 +1636,7 @@ function mapIntegers(array) {
 console.log('Array of integers [0, -1, 2] returned with each value doubled is', mapIntegers([0, -1, 2]));
 console.log('Array of integers [4, 3, 10] returned with each value doubled is', mapIntegers([4, 3, 10]));
 
-console.log('8/19/23 JavaScript code challenges practice')
-
-console.log('8/13/23 JavaScript code challenges practice')
+console.log('8/19/23 JavaScript code challenges practice');
 
 /**
  * From Codewars:
@@ -1662,3 +1660,23 @@ function countDistinct(string) {
 
 console.log('The count of distinct, case-insensitive characters or digits that occur more than once in string \'1amAa1\' is', countDistinct('1amAa1'));
 console.log('The count of distinct, case-insensitive characters or digits that occur more than once in string \'bBzz44o\' is', countDistinct('bBzz44o'));
+
+console.log('8/20/23 JavaScript code challenges practice');
+
+/**
+* From Codewars:
+* Create a function that when provided with a triplet, returns the index of the numerical element that lies between the other two elements.
+* The input to the function will be an array of three distinct numbers (Haskell: a tuple).
+*/
+
+function middleIndex(array) {
+    // spread operator to copy array without mutating it
+    const sortedArray = [...array].sort((a,b) => {
+        return a - b;
+    });
+    return array.indexOf(sortedArray[1]);
+}
+
+console.log('The index of the element whose value lies between the other two elements in [5, 0, 3] is', middleIndex([5, 0, 3]));
+console.log('The index of the element whose value lies between the other two elements in [6, 8.2, 5.9] is', middleIndex([6, 8.2, 5.9]));
+
