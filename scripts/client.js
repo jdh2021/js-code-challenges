@@ -1680,3 +1680,20 @@ function middleIndex(array) {
 console.log('The index of the element whose value lies between the other two elements in [5, 0, 3] is', middleIndex([5, 0, 3]));
 console.log('The index of the element whose value lies between the other two elements in [6, 8.2, 5.9] is', middleIndex([6, 8.2, 5.9]));
 
+
+console.log('8/26/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Given a non-empty array of integers, return the result of multiplying the values together in order. Example:
+ * 
+*/
+
+function multiplyIntegers(array) {
+    return result = array.reduce((accumulator, currentValue) =>
+        accumulator * currentValue);
+}
+
+console.log('The result of multiplying the values in [5, 2, 3, 11] is', multiplyIntegers([5,2,3,11]));
+console.log('The result of multiplying the values in [1, 0, 8, 34] is', multiplyIntegers([1,0,8,34]));
+
