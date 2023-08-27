@@ -1697,3 +1697,117 @@ function multiplyIntegers(array) {
 console.log('The result of multiplying the values in [5, 2, 3, 11] is', multiplyIntegers([5,2,3,11]));
 console.log('The result of multiplying the values in [1, 0, 8, 34] is', multiplyIntegers([1,0,8,34]));
 
+console.log('8/27/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Write a function that takes a negative or positive integer, which represents the number of minutes before (-) or after (+) Sunday midnight, 
+ * and returns the current day of the week and the current time in 24hr format ('hh:mm') as a string.
+ * 
+*/
+
+function calculateDateTime(n) {
+    let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    let day = days[0];
+    let dayCount = n / 1440;
+    let dayCountIndex = Math.abs(Math.trunc(n/1440));
+    let hourCount = 0;
+    let minuteCount = 0;
+
+    if (dayCount >= 1) {
+        day = days[(dayCountIndex % 7)];
+    }
+
+    if (dayCount < 0 && n % 1440 !== 0 ) {
+        day = days[(7 - (dayCountIndex % 7))-1];
+    }
+
+    if (dayCount < 0 && n % 1440 === 0 ) {
+        day = days[(7 - (dayCountIndex % 7))];
+    }
+
+    // when day is Sunday 
+    if (dayCount === 0) {
+        let remainingMinuteCount = n;
+        if (remainingMinuteCount > 60) {
+            hourCount = Math.trunc(remainingMinuteCount / 60);
+            if (hourCount < 10) {
+                hourCount = '0' + hourCount.toString();
+            }
+            minuteCount = remainingMinuteCount % 60;
+            if (minuteCount < 30) {
+                minuteCount = '0' + minuteCount.toString();
+            }
+        } else {
+            hourCount = '0' + hourCount.toString();
+            if (remainingMinuteCount < 10) {
+                minuteCount = '0' + minuteCount.toString();
+            } else {
+                minuteCount = remainingMinuteCount.toString();
+            }
+        }
+    }
+  
+    // when adding time
+    if (dayCount > 0) {
+        let remainingMinuteCount = n % 1440;
+        if (remainingMinuteCount > 60) {
+            hourCount = Math.trunc(remainingMinuteCount / 60);
+            if (hourCount < 10) {
+                hourCount = '0' + hourCount.toString();
+            }
+            minuteCount = remainingMinuteCount % 60;
+            if (minuteCount < 10) {
+                minuteCount = '0' + minuteCount.toString();
+            }
+        } else {
+            hourCount = '0' + hourCount.toString();
+            if (remainingMinuteCount < 10) {
+                minuteCount = '0' + remainingMinuteCount.toString();
+            } else {
+                minuteCount = remainingMinuteCount;
+            }
+        }
+    }
+  
+    // when subtracting time
+    if (dayCount < 0) {
+        let remainingMinuteCount = Math.abs(n % 1440);
+        if (remainingMinuteCount === 0 ) {
+            hourCount = '00';
+            minuteCount = '00';
+        }
+        if (remainingMinuteCount > 60) {
+            hourCount = Math.trunc(remainingMinuteCount / 60);
+            if (hourCount > 14) {
+                hourCount = 23 - hourCount;
+                hourCount = '0' + hourCount.toString();
+            } else {
+                hourCount = 23 - hourCount;
+            }
+            minuteCount = remainingMinuteCount % 60;
+            if (minuteCount > 50) {
+                minuteCount = 60 - minuteCount;
+                minuteCount = '0' + minuteCount.toString();
+            } else {
+                minuteCount = 60 - minuteCount;
+            }
+        } else if (remainingMinuteCount < 60 && remainingMinuteCount > 0) {
+            hourCount = 23 - hourCount.toString();
+            if (remainingMinuteCount > 50) {
+                minuteCount = 60 - remainingMinuteCount;
+                minuteCount = '0' + minuteCount.toString();
+            } else {
+                minuteCount = 60 - remainingMinuteCount;
+            }    
+        } 
+    }
+    let finalTime = hourCount.toString().concat(':', minuteCount.toString());
+    return day.concat(' ', finalTime );
+}
+
+console.log('4356, which represents the number of minutes after Sunday midnight and returns the current day and time in 24-hour format is', calculateDateTime(4356));
+console.log('1447, which represents the number of minutes after Sunday midnight and returns the current day and time in 24-hour format is', calculateDateTime(1447));
+console.log('-3, which represents the number of minutes before Sunday midnight and returns the current day and time in 24-hour format is', calculateDateTime(-3));
+console.log('-2890, which represents the number of minutes before Sunday midnight and returns the current day and time in 24-hour format is', calculateDateTime(-2890));
+console.log('0, which represents the number of minutes after Sunday midnight and returns the current day and time in 24-hour format is', calculateDateTime(0));
