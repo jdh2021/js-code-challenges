@@ -1811,3 +1811,32 @@ console.log('1447, which represents the number of minutes after Sunday midnight 
 console.log('-3, which represents the number of minutes before Sunday midnight and returns the current day and time in 24-hour format is', calculateDateTime(-3));
 console.log('-2890, which represents the number of minutes before Sunday midnight and returns the current day and time in 24-hour format is', calculateDateTime(-2890));
 console.log('0, which represents the number of minutes after Sunday midnight and returns the current day and time in 24-hour format is', calculateDateTime(0));
+
+console.log('9/2/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Given two numbers and an arithmetic operator (the name of it, as a string), 
+ * write a function that returns the results of the two numbers having that operator used on them.
+ * 
+*/
+
+function doArithmetic(firstNumber, secondNumber, operator) {
+    switch(operator) {
+        case 'add':
+            return firstNumber + secondNumber;
+        case 'subtract':
+            return firstNumber - secondNumber;
+        case 'multiply':
+            return firstNumber * secondNumber;
+        case 'divide':
+            return firstNumber / secondNumber; 
+        default:
+            console.log('Error');
+    }
+}
+
+console.log('Given numbers 0, 5 and operator \'add\', the result is', doArithmetic(0, 5, 'add'));
+console.log('Given numbers 7, 1.2 and operator \'subtract\', the result is', doArithmetic(7, 1.2, 'subtract'));
+console.log('Given numbers 100, 23 and operator \'divide\', the result is', doArithmetic(100, 23, 'divide'));
+console.log('Given numbers -2, -2 and operator \'multiply\', the result is', doArithmetic(-2, -2, 'multiply'));
