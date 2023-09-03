@@ -1840,3 +1840,18 @@ console.log('Given numbers 0, 5 and operator \'add\', the result is', doArithmet
 console.log('Given numbers 7, 1.2 and operator \'subtract\', the result is', doArithmetic(7, 1.2, 'subtract'));
 console.log('Given numbers 100, 23 and operator \'divide\', the result is', doArithmetic(100, 23, 'divide'));
 console.log('Given numbers -2, -2 and operator \'multiply\', the result is', doArithmetic(-2, -2, 'multiply'));
+
+console.log('9/3/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Given two interior angles (in degrees) of a triangle, write a function to return the third angle.
+ * 
+*/
+
+function thirdAngle(firstNumber, secondNumber) {
+    return 180 - firstNumber - secondNumber;
+}
+
+console.log('Given interior angles of 30 degrees and 80 degrees, the third angle of the triangle is', thirdAngle(30, 80), 'degrees.');
+console.log('Given interior angles of 45 degrees and 45 degrees, the third angle of the triangle is', thirdAngle(45, 45), 'degrees.');
