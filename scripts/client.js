@@ -1855,3 +1855,21 @@ function thirdAngle(firstNumber, secondNumber) {
 
 console.log('Given interior angles of 30 degrees and 80 degrees, the third angle of the triangle is', thirdAngle(30, 80), 'degrees.');
 console.log('Given interior angles of 45 degrees and 45 degrees, the third angle of the triangle is', thirdAngle(45, 45), 'degrees.');
+
+
+console.log('9/9/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Write a function to determine whether the number passed in is even or not.
+*/
+
+function isEven(number) {
+    if (number % 2 === 0) {
+        return true;
+    }
+    return false;
+}
+
+console.log('Is 13 even? :', isEven(9));
+console.log('Is 8 even?', isEven (8));
