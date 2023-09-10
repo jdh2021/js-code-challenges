@@ -1865,11 +1865,26 @@ console.log('9/9/23 JavaScript code challenges practice');
 */
 
 function isEven(number) {
-    if (number % 2 === 0) {
-        return true;
+    return number % 2 === 0 ? true : false
+}
+
+console.log('Is 13 even?:', isEven(9));
+console.log('Is 8 even?:', isEven (8));
+
+console.log('9/10/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Write a function to return the area of a circle with the given radius.
+ * Round the returned number to two decimal places. If the radius is not positive or not a number, return false.
+*/
+
+function findCircleArea (radius) {
+    if (typeof radius === 'number' && radius > 0) {
+        return Number((Math.PI * ( radius ** 2)).toFixed(2));
     }
     return false;
 }
 
-console.log('Is 13 even? :', isEven(9));
-console.log('Is 8 even?', isEven (8));
+console.log('The area of a circle with radius 2.5 is:', findCircleArea(2.5));
+console.log('The area of a circle with radius 4.02 is:', findCircleArea(4.02));
