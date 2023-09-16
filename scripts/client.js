@@ -1888,3 +1888,20 @@ function findCircleArea (radius) {
 
 console.log('The area of a circle with radius 2.5 is:', findCircleArea(2.5));
 console.log('The area of a circle with radius 4.02 is:', findCircleArea(4.02));
+
+console.log('9/16/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Write a function that always returns 5 without using the following characters 0123456789*+-/
+ * 
+*/
+
+function returnFive() {
+    const letters = ['a', 'b', 'c', 'd', 'e', 'f'];
+    return letters.indexOf('f'); 
+}
+
+console.log('The function returns 5 without using characters \'0123456789*+-\'', returnFive());
+
+
