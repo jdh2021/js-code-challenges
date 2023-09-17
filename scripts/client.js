@@ -1904,4 +1904,58 @@ function returnFive() {
 
 console.log('The function returns 5 without using characters \'0123456789*+-\'', returnFive());
 
+console.log('9/17/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Write a function that increments a string to create a new string. 
+ * If the string already ends with a number, the number should be incremented by 1.
+ * If the string does not end with a number, the number 1 should be appended to the new string.
+ * 
+*/
+
+function incrementString(string) {
+    const stringArray = string.split('');
+    const numberArray = [];
+    // endIndex will store the index at which to slice the non-numerical portion of the string
+    let endIndex = 0;
+    // if last digit isn't a number, add 1 to end of string and return
+    if (isNaN(stringArray[stringArray.length-1])) {
+        return stringArray.join('') + 1;
+    } else {
+        // starting at end of array, check whether each character is a number and if it is, push it into numberArray
+        for (let i=stringArray.length-1; i >=0; i-=1) {
+            if(!isNaN(stringArray[i])) {
+                numberArray.push(stringArray[i]);
+                endIndex = i;
+            } else {
+                break;
+            }
+        }
+        // count how many digits are in the numberArray to account for leadig zeros
+        let totalDigitCount = numberArray.length;
+        let reversedNumberArray = numberArray.reverse();
+        // add 1 to number to get final number
+        let addOneNumber = Number(reversedNumberArray.join(''))+1;
+        // split final number into an array to compare digits to account for leading zeros
+        let addOneNumberArray = addOneNumber.toString().split('');
+        const numberDigitCount = addOneNumberArray.length;
+
+        if (totalDigitCount > numberDigitCount) {
+            // working backwards, replace each digit from computed number in original number array to preserve leading zeros
+            for(let i=addOneNumberArray.length-1, j=reversedNumberArray.length-1; i>=0; i-=1, j-=1) {
+                reversedNumberArray[j] = addOneNumberArray[i];      
+            }   
+        } else {
+            return string.slice(0, endIndex) + addOneNumber.toString();
+        }
+        let finalArray = reversedNumberArray.join('');
+        return string.slice(0, endIndex) + finalArray;
+    }
+}
+
+console.log('String \'abc0009\' incremented is:', incrementString('abc0009'));
+console.log('String \'abc099\' incremented is:', incrementString('abc099'));
+console.log('String \'abc9\' incremented is:', incrementString('abc9'));
+console.log('String \'abc\' incremented is:', incrementString('abc'));
 
