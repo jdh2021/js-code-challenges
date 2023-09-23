@@ -1959,3 +1959,22 @@ console.log('String \'abc099\' incremented is:', incrementString('abc099'));
 console.log('String \'abc9\' incremented is:', incrementString('abc9'));
 console.log('String \'abc\' incremented is:', incrementString('abc'));
 
+
+console.log('9/23/23 JavaScript code challenges practice');
+
+/**
+ * Write a function that returns the factorial of a given integer. The integer will be non-negative.
+ * 
+ */
+
+function generateFactorial(integer) {
+    if (integer === 0) {
+        return 1;
+    }
+    if (integer >= 1 ) {
+        return (integer * generateFactorial(integer-1));
+    }
+}
+
+console.log('The factorial of integer 7 is:', generateFactorial(7));
+console.log('The factorial of integer 3 is:', generateFactorial(3));
