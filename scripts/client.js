@@ -1978,3 +1978,28 @@ function generateFactorial(integer) {
 
 console.log('The factorial of integer 7 is:', generateFactorial(7));
 console.log('The factorial of integer 3 is:', generateFactorial(3));
+
+console.log('9/24/23 JavaScript code challenges practice');
+
+/**
+ * Write a function that tests if a number is a prime number.
+ * 
+ */
+
+function checkPrime(number) {
+    if (number === 1) {
+        return false;
+    } else if (number === 2) {
+        return true;
+    } else {
+        for(let i=2; i<number; i+=1) {
+            if (number % i === 0) {
+                return false
+            };
+        }
+        return true;
+    }
+}
+
+console.log('Is 45 a prime number?:', checkPrime(45));
+console.log('Is 5 a prime number?:', checkPrime(5));
