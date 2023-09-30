@@ -2003,3 +2003,23 @@ function checkPrime(number) {
 
 console.log('Is 45 a prime number?:', checkPrime(45));
 console.log('Is 5 a prime number?:', checkPrime(5));
+
+console.log('9/30/23 JavaScript code challenges practice');
+
+/**
+ * Use recursion rather than loops to write a function that returns an array of integers between two parameters, start and end. 
+ *  
+ */
+
+function generateNumberRange(startNumber, endNumber) {
+    if (endNumber < startNumber) {
+        return [];
+    } else {
+        let numberRange = generateNumberRange(startNumber, endNumber - 1);
+        numberRange.push(endNumber);
+        return numberRange;
+    }
+}
+
+console.log('Using recursion, return all integers between 3 and 9 (inclusive) in an array:', generateNumberRange(3, 9))
+console.log('Using recursion, return all integers between 10 and 10 (inclusive) in an array:', generateNumberRange(10, 10))
