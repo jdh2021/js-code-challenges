@@ -2023,3 +2023,18 @@ function generateNumberRange(startNumber, endNumber) {
 
 console.log('Using recursion, return all integers between 3 and 9 (inclusive) in an array:', generateNumberRange(3, 9))
 console.log('Using recursion, return all integers between 10 and 10 (inclusive) in an array:', generateNumberRange(10, 10))
+
+console.log('10/1/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Remove an exclamation mark from the end of a string
+ *  
+ */
+
+function removeExclamation(string) {
+    return string[string.length-1] === '!' ? string.slice(0, -1) : string
+}
+
+console.log('Remove the ending exclamation mark (if one exists) from string \'Yabba Dabba Doo!!\':', removeExclamation('Yabba Dabba Doo!!'))
+console.log('Remove the ending exclamation mark (if one exists) from string \'abc\':', removeExclamation('abc'))
