@@ -2038,3 +2038,32 @@ function removeExclamation(string) {
 
 console.log('Remove the ending exclamation mark (if one exists) from string \'Yabba Dabba Doo!!\':', removeExclamation('Yabba Dabba Doo!!'))
 console.log('Remove the ending exclamation mark (if one exists) from string \'abc\':', removeExclamation('abc'))
+
+
+console.log('10/1/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Sort a given string. Each word in the string will contain a single number. 
+ * This number is the position the word should have in the result.
+ * Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0)
+ *  
+ */
+
+function sortString(string) {
+    const wordArray = string.split(" ");
+    const orderedArray = [];
+    for (let i=0; i<wordArray.length; i+=1) {
+        const letterArray = wordArray[i].split("");
+        for (let j=0; j<letterArray.length; j+=1) {
+            if (/[0-9]/.test(letterArray[j])) {
+                orderedArray.push({ priority: letterArray[j], word: wordArray[i]});
+            }
+        }
+    }
+    orderedArray.sort((a,b) => (a.priority > b.priority) ? 1 : ((b.priority > a.priority) ? -1 : 0));
+    return orderedArray.map(value => value.word).join(' ');
+}
+
+console.log('Sorting the words in string \'morni2ng! 1Good\' by the number contained within them:', sortString('morni2ng! 1Good'));
+console.log('Sorting the words in string \'7middle Fir1st l8ast\' by the number contained within them:', sortString('7middle Fir1st l8ast'));
