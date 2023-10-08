@@ -2040,7 +2040,7 @@ console.log('Remove the ending exclamation mark (if one exists) from string \'Ya
 console.log('Remove the ending exclamation mark (if one exists) from string \'abc\':', removeExclamation('abc'))
 
 
-console.log('10/1/23 JavaScript code challenges practice');
+console.log('10/7/23 JavaScript code challenges practice');
 
 /**
  * From Codewars:
@@ -2067,3 +2067,31 @@ function sortString(string) {
 
 console.log('Sorting the words in string \'morni2ng! 1Good\' by the number contained within them:', sortString('morni2ng! 1Good'));
 console.log('Sorting the words in string \'7middle Fir1st l8ast\' by the number contained within them:', sortString('7middle Fir1st l8ast'));
+
+
+console.log('10/8/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Given a string that may have mixed uppercase and lowercase letters, convert that string to either lowercase only or uppercase only based on:
+ * make as few changes as possible
+ * if the string contains equal number of uppercase and lowercase letters, convert the string to lowercase.
+ *  
+ */
+
+function convertString(string) {
+    let lowerCaseCount = 0;
+    let upperCaseCount = 0;
+    for (let letter of string) {
+        if (letter !== letter.toLowerCase() && letter == letter.toUpperCase()) {
+            upperCaseCount +=1;
+        } 
+        if (letter !== letter.toUpperCase() && letter == letter.toLowerCase()) {
+            lowerCaseCount +=1;
+        } 
+    }
+    return lowerCaseCount >= upperCaseCount  ? string.toLowerCase() : string.toUpperCase();
+}    
+
+console.log('Convert string \'aNIMaL\' to uppercase or lowercase depending on whether there is a greater quantiy of uppercase or lowercase letters:', convertString('aNIMaL'));
+console.log('Convert string \'SEAshells\' to uppercase or lowercase depending on whether there is a greater quantiy of uppercase or lowercase letters:', convertString('SEAshells'));
