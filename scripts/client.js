@@ -2095,3 +2095,19 @@ function convertString(string) {
 
 console.log('Convert string \'aNIMaL\' to uppercase or lowercase depending on whether there is a greater quantiy of uppercase or lowercase letters:', convertString('aNIMaL'));
 console.log('Convert string \'SEAshells\' to uppercase or lowercase depending on whether there is a greater quantiy of uppercase or lowercase letters:', convertString('SEAshells'));
+
+console.log('10/14/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Create a function that converts a name into initials and returns two capital letters with a period separating them.
+ * 
+ */
+
+function convertName(string) {
+    const nameArray = string.split(' ');
+    return nameArray[0][0].toUpperCase() + '.' + nameArray[1][0].toUpperCase();
+}
+
+console.log('Convert name \'Dana Saunders\' into initials:', convertName('Dana Saunders'));
+console.log('Convert name \'Alex Anderson\' into initials:', convertName('Alex Anderson'));
