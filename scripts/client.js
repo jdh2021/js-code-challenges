@@ -2111,3 +2111,18 @@ function convertName(string) {
 
 console.log('Convert name \'Dana Saunders\' into initials:', convertName('Dana Saunders'));
 console.log('Convert name \'Alex Anderson\' into initials:', convertName('Alex Anderson'));
+
+console.log('10/15/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Write a function which returns the time since midnight in milliseconds after being passed h hours, m minutes, and s seconds.
+ * 
+ */
+
+function timeSinceMidnight(h, m, s) {
+    return (h*60*60*1000) + (m*60*1000) + (s*1000);
+}
+
+console.log('Time after midnight in milliseconds for hour 1, minute 14, second 20 is:', timeSinceMidnight(1, 14, 20));
+console.log('Time after midnight in milliseconds for hour 10, minute 1, second 2 is:', timeSinceMidnight(10, 1, 2));
