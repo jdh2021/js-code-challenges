@@ -2126,3 +2126,18 @@ function timeSinceMidnight(h, m, s) {
 
 console.log('Time after midnight in milliseconds for hour 1, minute 14, second 20 is:', timeSinceMidnight(1, 14, 20));
 console.log('Time after midnight in milliseconds for hour 10, minute 1, second 2 is:', timeSinceMidnight(10, 1, 2));
+
+console.log('10/21/23 JavaScript code challenges practice');
+
+/**
+ * Write a function that takes in a list and returns a list with the reverse order.
+ * 
+ */
+
+function reverseArray(array) {
+    return array.reverse();
+}
+
+console.log('Reverse the order of [2, 0, 1]', reverseArray([2,0,1]));
+console.log('Reverse the order of [1, 2.2, 9]', reverseArray([1,2.2,9]));
+
