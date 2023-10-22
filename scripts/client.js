@@ -2141,3 +2141,23 @@ function reverseArray(array) {
 console.log('Reverse the order of [2, 0, 1]', reverseArray([2,0,1]));
 console.log('Reverse the order of [1, 2.2, 9]', reverseArray([1,2.2,9]));
 
+
+console.log('10/22/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Given an array of integers, remove the smallest value. Do not mutate the original array/list. 
+ * If there are multiple elements with the same value, remove the one with a lower index. 
+ * If you get an empty array/list, return an empty array/list.
+ * 
+ */
+
+function removeSmallest(numberArray) {
+    const smallestValue = Math.min(...numberArray);
+    const copiedArray = numberArray.slice();
+    const removedNumber = copiedArray.splice(numberArray.indexOf(smallestValue), 1);
+    return copiedArray;
+}
+
+console.log('Remove the smallest value from array [5, 10, -5, -20]:', removeSmallest([5, 10, -5, -20]));
+console.log('Remove the smallest value from array [1, -1, -1, 200]:', removeSmallest([1, -1, -1, 200]));
