@@ -2161,3 +2161,42 @@ function removeSmallest(numberArray) {
 
 console.log('Remove the smallest value from array [5, 10, -5, -20]:', removeSmallest([5, 10, -5, -20]));
 console.log('Remove the smallest value from array [1, -1, -1, 200]:', removeSmallest([1, -1, -1, 200]));
+
+
+console.log('10/28/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * When provided with a number between 0-9, return it in text. 
+ * 
+ */
+
+function convertNumber(number) {
+    switch(number) {
+        case 0:
+            return 'Zero';
+        case 1:
+            return 'One'; 
+        case 2:
+            return 'Two';
+        case 3:
+            return 'Three';
+        case 4: 
+            return 'Four';
+        case 5:
+            return 'Five';
+        case 6: 
+            return 'Six';
+        case 7:
+            return 'Seven';
+        case 8:
+            return 'Eight';
+        case 9:
+            return 'Nine';
+        default:
+            return 'No value found';   
+    }
+}
+
+console.log('Number 9 converted to text is:', convertNumber(9));
+console.log('Number 3 converted to text is:', convertNumber(3));
