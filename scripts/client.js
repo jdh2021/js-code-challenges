@@ -2200,3 +2200,36 @@ function convertNumber(number) {
 
 console.log('Number 9 converted to text is:', convertNumber(9));
 console.log('Number 3 converted to text is:', convertNumber(3));
+
+console.log('10/29/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Create a function to find the count of the most frequent item of an array. Assume that input is an array of integers. For an empty array return 0. 
+ * 
+ */
+
+function frequencyCount(array) {
+    let maxCount = 0;
+    if (array.length === 0) {
+        return 0;
+    }
+    for(let i=0; i<array.length; i+=1) {
+        let integerCount = 0;
+        for(let j=0; j<array.length; j+=1) {
+            console.log('i is', array[i], 'j is', array[j])
+            if (array[i] === array[j]) {
+                integerCount+=1;
+                console.log('integerCount is', integerCount)
+            }
+        }
+        if (integerCount > maxCount) {
+            maxCount = integerCount
+        }
+    }
+    return maxCount > 0 ? maxCount: 1;
+}
+
+console.log('The count of the most frequent item in array [0, 0, 0, 3, 2] is:', frequencyCount([0, 0, 0, 3, 2]));
+console.log('The count of the most frequent item in array [1.2, 2.2, 2.3, 1.3, 1.4] is:', frequencyCount([1.2, 2.2, 2.3, 1.3, 1.4]));
+console.log('The count of the most frequent item in array [-2, -8, -2, 14, 6, -9, -10, 3, -2, 7, 13, -3] is:', frequencyCount([-2,-8,-2,14,6,-9,-10,3,-2,7,13,-3]));
