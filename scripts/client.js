@@ -2233,3 +2233,20 @@ function frequencyCount(array) {
 console.log('The count of the most frequent item in array [0, 0, 0, 3, 2] is:', frequencyCount([0, 0, 0, 3, 2]));
 console.log('The count of the most frequent item in array [1.2, 2.2, 2.3, 1.3, 1.4] is:', frequencyCount([1.2, 2.2, 2.3, 1.3, 1.4]));
 console.log('The count of the most frequent item in array [-2, -8, -2, 14, 6, -9, -10, 3, -2, 7, 13, -3] is:', frequencyCount([-2,-8,-2,14,6,-9,-10,3,-2,7,13,-3]));
+
+
+console.log('11/4/23 JavaScript code challenges practice');
+
+/*
+* Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
+* Return your answer as a number.
+*/
+
+function convertArray(array) {
+    return newArray = array.reduce((accumulator, currentValue) => 
+        parseInt(accumulator) + parseInt(currentValue), 0
+    )
+}    
+
+console.log('Returning the sum of mixed array [\'5\', 3, \'2\', 4] is', convertArray(['5', 3, '2', 4]));
+console.log('Returning the sum of mixed array [7, \'2\', \'6\'] is', convertArray([7, '2', '6']));
