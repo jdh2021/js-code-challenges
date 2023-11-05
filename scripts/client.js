@@ -2250,3 +2250,17 @@ function convertArray(array) {
 
 console.log('Returning the sum of mixed array [\'5\', 3, \'2\', 4] is', convertArray(['5', 3, '2', 4]));
 console.log('Returning the sum of mixed array [7, \'2\', \'6\'] is', convertArray([7, '2', '6']));
+
+console.log('11/5/23 JavaScript code challenges practice');
+
+/**
+ * Given a triangle of consecutive odd numbers, calculate the sum of the numbers in the nth row of this triangle (starting at index 1)
+ *  
+ */
+
+function calculateTriangleSum(row) {
+    return row ** 3;
+}
+
+console.log('The sum of the numbers in the 5th row of the triangle containing consecutive odd numbers is:',  calculateTriangleSum(5));
+console.log('The sum of the numbers in the 3rd row of the triangle containing consecutive odd numbers is:',  calculateTriangleSum(3));
