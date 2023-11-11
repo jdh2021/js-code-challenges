@@ -2238,6 +2238,7 @@ console.log('The count of the most frequent item in array [-2, -8, -2, 14, 6, -9
 console.log('11/4/23 JavaScript code challenges practice');
 
 /*
+ * From Codewars:
 * Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
 * Return your answer as a number.
 */
@@ -2254,6 +2255,7 @@ console.log('Returning the sum of mixed array [7, \'2\', \'6\'] is', convertArra
 console.log('11/5/23 JavaScript code challenges practice');
 
 /**
+ *  * From Codewars:
  * Given a triangle of consecutive odd numbers, calculate the sum of the numbers in the nth row of this triangle (starting at index 1)
  *  
  */
@@ -2264,3 +2266,18 @@ function calculateTriangleSum(row) {
 
 console.log('The sum of the numbers in the 5th row of the triangle containing consecutive odd numbers is:',  calculateTriangleSum(5));
 console.log('The sum of the numbers in the 3rd row of the triangle containing consecutive odd numbers is:',  calculateTriangleSum(3));
+
+console.log('11/11/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Write a function which takes a number and returns the corresponding ASCII char for that value.
+ *  
+ */
+
+function returnAscii(number) {
+    return String.fromCharCode(number);
+}
+
+console.log('Returning the ASCII value for 7 is:', returnAscii(7));
+console.log('Returning the ASCII value for 3 is:', returnAscii(3));
