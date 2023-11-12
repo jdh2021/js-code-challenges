@@ -2239,8 +2239,8 @@ console.log('11/4/23 JavaScript code challenges practice');
 
 /*
  * From Codewars:
-* Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
-* Return your answer as a number.
+ * Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
+ * Return your answer as a number.
 */
 
 function convertArray(array) {
@@ -2255,7 +2255,7 @@ console.log('Returning the sum of mixed array [7, \'2\', \'6\'] is', convertArra
 console.log('11/5/23 JavaScript code challenges practice');
 
 /**
- *  * From Codewars:
+ * From Codewars:
  * Given a triangle of consecutive odd numbers, calculate the sum of the numbers in the nth row of this triangle (starting at index 1)
  *  
  */
@@ -2281,3 +2281,24 @@ function returnAscii(number) {
 
 console.log('Returning the ASCII value for 7 is:', returnAscii(7));
 console.log('Returning the ASCII value for 3 is:', returnAscii(3));
+
+console.log('11/12/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Create a function with two arguments that will return an array of the first n multiples of x.
+ * Assume both the given number and the number of times to count will be positive numbers greater than 0.
+ *  
+ */
+
+function countMultiples(number, multiple) {
+    const multiplesArray = [];
+    while (multiple > 0) {
+        multiplesArray.push(number * multiple);
+        multiple-=1;
+    }
+    return multiplesArray.reverse();
+}
+
+console.log('Returning an array of the first 3 multiples of 2 is:', countMultiples(2, 3));
+console.log('Returning an array of the first 7 multiples of 1 is:', countMultiples(1, 7));
