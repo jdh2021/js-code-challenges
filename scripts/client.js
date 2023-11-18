@@ -2302,3 +2302,39 @@ function countMultiples(number, multiple) {
 
 console.log('Returning an array of the first 3 multiples of 2 is:', countMultiples(2, 3));
 console.log('Returning an array of the first 7 multiples of 1 is:', countMultiples(1, 7));
+
+console.log('11/18/23 JavaScript code challenges practice');
+
+console.log('11/12/23 JavaScript code challenges practice');
+
+/**
+ * Given a month as an integer from 1 to 12, return to which quarter of the year it belongs as an integer number.
+ * 
+ */
+
+function determineQuarter(month) {
+    switch(month) {
+        case 1:
+        case 2:
+        case 3:
+            return 1;
+        case 4:
+        case 5:
+        case 6:
+            return 2;
+        case 7:
+        case 8:
+        case 9:   
+            return 3;
+        case 10:
+        case 11:
+        case 12:
+            return 4;
+        default:
+            return 'Enter an integer from 1-12';
+    }
+}
+
+console.log('Month 4 belongs to which quarter of the year?:', determineQuarter(4));
+console.log('Month 12 belongs to which quarter of the year?:', determineQuarter(12));
+
