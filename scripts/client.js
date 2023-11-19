@@ -2217,10 +2217,8 @@ function frequencyCount(array) {
     for(let i=0; i<array.length; i+=1) {
         let integerCount = 0;
         for(let j=0; j<array.length; j+=1) {
-            console.log('i is', array[i], 'j is', array[j])
             if (array[i] === array[j]) {
                 integerCount+=1;
-                console.log('integerCount is', integerCount)
             }
         }
         if (integerCount > maxCount) {
@@ -2305,9 +2303,8 @@ console.log('Returning an array of the first 7 multiples of 1 is:', countMultipl
 
 console.log('11/18/23 JavaScript code challenges practice');
 
-console.log('11/12/23 JavaScript code challenges practice');
-
 /**
+ * From Codewars:
  * Given a month as an integer from 1 to 12, return to which quarter of the year it belongs as an integer number.
  * 
  */
@@ -2338,3 +2335,21 @@ function determineQuarter(month) {
 console.log('Month 4 belongs to which quarter of the year?:', determineQuarter(4));
 console.log('Month 12 belongs to which quarter of the year?:', determineQuarter(12));
 
+console.log('11/19/23 JavaScript code challenges practice');
+
+/**
+ * From Codewars:
+ * Sort an array of objects in descending order based on the value of the specified property.
+ *  
+ */
+
+function sortObjects(property, array) {
+    return array.sort((a, b) => 
+        b[property] - a[property]
+    )
+};
+
+console.log('Sorting array of objects [{age: 23, pairs: 7},{age: 35, pairs: 2},{age: 78, pairs: 40},{age: 48, pairs: 12} by descending age is:',
+sortObjects('age',[{age: 23, pairs: 7}, {age: 35, pairs: 2}, {age: 78, pairs: 40}, {age: 48, pairs: 12}]));
+console.log('Sorting array of objects [{age: 23, pairs: 7},{age: 35, pairs: 2},{age: 78, pairs: 40},{age: 48, pairs: 12} by descending number of pairs is:',
+sortObjects('pairs',[{age: 23, pairs: 7}, {age: 35, pairs: 2}, {age: 78, pairs: 40}, {age: 48, pairs: 12}]));
